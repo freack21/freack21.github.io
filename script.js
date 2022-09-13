@@ -30,10 +30,10 @@ var state = 0, it = 0;
 function paint()
 {
     g.beginPath();
-    g.fillStyle = "silver";
+    g.fillStyle = "chocolate";
     g.fillRect(0,0,gr.width,gr.height);
     g.beginPath();
-    g.strokeStyle = "gray";
+    g.strokeStyle = "pink";
     g.rect(0,0,gr.width,gr.height);
     g.lineWidth = "4";
     g.stroke();
@@ -41,11 +41,11 @@ function paint()
     {
         case 0:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Halo, Sasaaaa....", 10, 120)
             setTimeout(it++, 1000/60);
@@ -57,11 +57,11 @@ function paint()
         break;
         case 1:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Lagi ngapain itu?", 10, 120)
             setTimeout(it++, 1000/60);
@@ -73,11 +73,11 @@ function paint()
         break;
         case 2:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "25px calibri";
             g.fillText("Jangan ngelamun muluuu..", 10, 120)
             setTimeout(it++, 1000/60);
@@ -89,11 +89,11 @@ function paint()
         break;
         case 3:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Eh, kamu tau ga?", 10, 120)
             setTimeout(it++, 1000/60);
@@ -105,11 +105,11 @@ function paint()
         break;
         case 4:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Gatau ya? Atau lupa?", 10, 120)
             setTimeout(it++, 1000/60);
@@ -127,7 +127,7 @@ function paint()
                 if(t0[i] == 1)
                 {
                     g.beginPath();
-                    g.fillStyle ="black";
+                    g.fillStyle ="pink";
                     g.strokeStyle="silver";	g.rect(k*20,j*20,20,20);
                     g.fill();g.stroke();
     
@@ -142,11 +142,11 @@ function paint()
         break;
         case 6:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Udah tau?", 10, 120)
             setTimeout(it++, 1000/60);
@@ -158,11 +158,11 @@ function paint()
         break;
         case 7:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Ha? Belomm?", 10, 120)
             setTimeout(it++, 1000/60);
@@ -180,7 +180,7 @@ function paint()
                 if(t0[i] == 1)
                 {
                     g.beginPath();
-                    g.fillStyle ="black";
+                    g.fillStyle ="pink";
                     g.strokeStyle="silver";	g.rect(k*20,j*20,20,20);
                     g.fill();g.stroke();
     
@@ -195,11 +195,11 @@ function paint()
         break;
         case 9:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "25px calibri";
             g.fillText("Abang sayang kamuuuu..", 10, 120)
             setTimeout(it++, 1000/60);
@@ -211,11 +211,11 @@ function paint()
         break;
         case 10:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "25px calibri";
             g.fillText("Hari ini...", 10, 120)
             setTimeout(it++, 1000/60);
@@ -227,11 +227,11 @@ function paint()
         break;
         case 11:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "25px calibri";
             g.fillText("Selasa, 06-09-22..", 10, 120)
             setTimeout(it++, 1000/60);
@@ -243,11 +243,11 @@ function paint()
         break;
         case 12:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "20px calibri";
             g.fillText("HAPPY ANNIVERSARY SAYANGG!!", 10, 120)
             setTimeout(it++, 1000/60);
@@ -259,11 +259,11 @@ function paint()
         break;
         case 13:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Happy terus yaa...", 10, 120)
             setTimeout(it++, 1000/60);
@@ -275,11 +275,11 @@ function paint()
         break;
         case 14:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "25px calibri";
             g.fillText("Semoga kita terus kuat..", 10, 120)
             setTimeout(it++, 1000/60);
@@ -291,11 +291,11 @@ function paint()
         break;
         case 15:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Be Better Us...", 10, 120)
             setTimeout(it++, 1000/60);
@@ -307,11 +307,11 @@ function paint()
         break;
         case 16:
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.fillRect(0,0,gr.width,60);
             g.fillRect(0,200-30,gr.width,60);
             g.beginPath();
-            g.fillStyle = "black";
+            g.fillStyle = "pink";
             g.font = "30px calibri";
             g.fillText("Once again...", 10, 120)
             setTimeout(it++, 1000/60);
@@ -329,7 +329,7 @@ function paint()
                 if(t0[i] == 1)
                 {
                     g.beginPath();
-                    g.fillStyle ="black";
+                    g.fillStyle ="pink";
                     g.strokeStyle="silver";	g.rect(k*20,j*20,20,20);
                     g.fill();g.stroke();
     
