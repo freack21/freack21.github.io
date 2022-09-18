@@ -7,12 +7,11 @@ h3 {
 }
 
 .container {
-    width: 360px;
+    width: 350px;
     height:480px;
     background-color: #a33;
     border-radius: 16px;
     position: relative;
-    box-sizing: border-box;
 }
 
 .hide {
