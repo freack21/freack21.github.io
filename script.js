@@ -1,7 +1,7 @@
 var itr = 0;
 var timer = 2;
 var state = 1;
-var maxState = 16;
+var maxState = 19;
 
 window.onload =()=> {
     setInterval(update, 1000);
