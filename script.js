@@ -2,13 +2,16 @@ var itr = 0;
 var timer = 2;
 var state = 1;
 var maxState = 19;
+document.getElementById('song').play();
 
 window.onload =()=> {
+    document.getElementById('song').play();
     setInterval(update, 1000);
 }
 
 function update()
 {
+    document.getElementById('song').play();
     itr++;
     if(itr > timer)
     {
