@@ -6,7 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Sinta!</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #847D7B;
+        }
+
+        .container {
+            width: 320px;
+            height: 480px;
+            background-color: #fff;
+            border-radius: 16px;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #c1,#c2,#c3,#c4,#c5,#c6 {
+            text-align: center;
+        } 
+
+        #c2,#c3,#c4,#c5,#c6 {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +50,41 @@
         </div>
     </div>
 
-    <script src="code.js"></script>
+    <script>
+        var itr = 0;
+        var state = 1;
+
+        window.onload =()=> {
+            setInterval(update, 1000);
+        }
+
+        function update()
+        {
+            itr++;
+            if(itr > 3)
+            {
+                cd(state);
+                if(state >= 2)
+                {
+                    state=2;
+                }
+                else
+                {
+                    state++;
+                }
+                itr=0;
+            }
+        }
+
+        function cd(st)
+        {
+            var x = document.getElementById("c"+st);
+            x.style.display="none";
+            var y = st+1;
+            x = document.getElementById("c"+y);
+            x.style.display="block";
+        }
+    </script>
 
 </body>
 </html>

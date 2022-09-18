@@ -6,85 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Sinta!</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-        body{
-            background-color: #847D7B;
-        }
-
-        .container {
-            width: 320px;
-            height: 480px;
-            background-color: #fff;
-            border-radius: 16px;
-        }
-
-        .center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -moz-transform: translateX(-50%) translateY(-50%);
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        #c1,#c2,#c3,#c4,#c5,#c6 {
-            text-align: center;
-        } 
-
-        #c2,#c3,#c4,#c5,#c6 {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <audio src="sound.mp3" type="audio/mpeg" autoplay loop></audio>
     <div class="w3-card-4 container center">
+        <div id="sticker">
+            <img src="s1.png" alt="" width="64px" style="position:absolute;top: 10px; left: 10px;">
+            <img src="s2.png" alt="" width="64px" style="position:absolute;top: 10px; left: 280px;">
+            <img src="s3.png" alt="" width="64px" style="position:absolute;top: 400px; left: 10px;">
+            <img src="s4.png" alt="" width="64px" style="position:absolute;top: 400px; left: 280px;">
+        </div>
         <div class="center" id="c1">
-            <h3 class="w3-text-gray">Halo, Sintaa!</h3>
+            <h3>Halo, Sintaa!</h3>
         </div>
         <div class="center" id="c2">
-            <h3 class="w3-text-gray">Sekarang tanggal berapa ya?</h3>
+            <h3>Sekarang tanggal berapa ya?</h3>
         </div>
         <div class="center" id="c3">
-            <h3 class="w3-text-gray">Lu udah tua banget wkwk</h3>
+            <h3>Happy Birthday, Sintaa!</h3>
+        </div>
+        <div class="center" id="c4">
+            <h3>Lu udah tua banget wkwk</h3>
+        </div>
+        <div class="center" id="c5">
+            <h3>Semangat menjalani hari-harinya yaa!</h3>
+        </div>
+        <div class="center" id="c6">
+            <h3>Semangat menghadapi masalah hidup...</h3>
+        </div>
+        <div class="center" id="c7">
+            <h3>Semangat belajarnyaa!</h3>
+        </div>
+        <div class="center" id="c8">
+            <h3>Biar bisa menggapai cita-citanya..</h3>
+        </div>
+        <div class="center" id="c9">
+            <h3>Mau jadi guru kan lu?</h3>
+        </div>
+        <div class="center" id="c10">
+            <h3>Ajarin anak gw besok yaa!</h3>
+        </div>
+        <div class="center" id="c11">
+            <h3>Semoga kita bisa cepet ketemuuu...</h3>
+        </div>
+        <div class="center" id="c12">
+            <h3>Biar ga virtual mulu :D</h3>
+        </div>
+        <div class="center" id="c13">
+            <h3>Semoga yang lu inginkan semuanya tercapai yaa!</h3>
+        </div>
+        <div class="center" id="c14">
+            <h3>Lu jangan lupa berdoa juga...</h3>
+        </div>
+        <div class="center" id="c15">
+            <h3>Selamat Ulang Tahun!</h3>
+        </div>
+        <div class="w3-bottom w3-panel" id="c16">
+            <h3 class="w3-center">Unchh >.<</h3>
+            <img src="p1.jpg" alt="" width="100%" class="w3-round-large">
+        </div>
+        <div class="w3-top w3-panel" id="c17">
+            <img src="p2.jpg" alt="" width="100%" class="w3-round-large">
+            <h3 class="w3-center">Cute <3</h3>
         </div>
     </div>
 
-    <script>
-        var itr = 0;
-        var state = 1;
-
-        window.onload =()=> {
-            setInterval(update, 1000);
-        }
-
-        function update()
-        {
-            itr++;
-            if(itr > 3)
-            {
-                cd(state);
-                if(state >= 2)
-                {
-                    state=2;
-                }
-                else
-                {
-                    state++;
-                }
-                itr=0;
-            }
-        }
-
-        function cd(st)
-        {
-            var x = document.getElementById("c"+st);
-            x.style.display="none";
-            var y = st+1;
-            x = document.getElementById("c"+y);
-            x.style.display="block";
-        }
-    </script>
-
+    <script src="code.js"></script>
 </body>
 </html>

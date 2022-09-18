@@ -1,5 +1,7 @@
 var itr = 0;
+var timer = 2;
 var state = 1;
+var maxState = 16;
 
 window.onload =()=> {
     setInterval(update, 1000);
@@ -8,15 +10,18 @@ window.onload =()=> {
 function update()
 {
     itr++;
-    if(itr > 3)
+    if(itr > timer)
     {
         cd(state);
-        if(state >= 2)
+        if(state >= 14)
         {
-            state=2;
+            timer = 5;
         }
-        else
+        if(state >= maxState)
         {
+            state = maxState;
+        }
+        else{
             state++;
         }
         itr=0;

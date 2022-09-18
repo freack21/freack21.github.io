@@ -1,12 +1,21 @@
 body{
-    background-color: #847D7B;
+    background-color: #aaa;
+}
+
+h3 {
+    color: #fff;
 }
 
 .container {
     width: 360px;
     height:480px;
-    background-color: #fff;
+    background-color: #a33;
     border-radius: 16px;
+    position: relative;
+}
+
+.hide {
+    display: none;
 }
 
 .center {
@@ -18,10 +27,10 @@ body{
     transform: translateX(-50%) translateY(-50%);
 }
 
-#c1,#c2,#c3,#c4,#c5,#c6 {
+#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15 {
     text-align: center;
 } 
 
-#c2,#c3,#c4,#c5,#c6 {
+#c16,#c17,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15 {
     display: none;
 }
