@@ -12,6 +12,7 @@ h3 {
     background-color: #a33;
     border-radius: 16px;
     position: relative;
+    box-sizing: border-box;
     margin: 0 8px;
 }
 
