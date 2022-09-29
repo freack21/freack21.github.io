@@ -1,17 +1,19 @@
 body{
-    background-color: #aaa;
+    background-color: darkcyan;
 }
 
 h3 {
-    color: #fff;
+    color:teal;
+    font-family: 'Rubik', sans-serif;
 }
 
 .container {
     width: 360px;
     height:480px;
-    background-color: #a33;
+    background-color: powderblue;
     border-radius: 16px;
     position: relative;
+    overflow: hidden;
 }
 
 audio {

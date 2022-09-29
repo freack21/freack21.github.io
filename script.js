@@ -1,7 +1,7 @@
 var itr = 0;
-var timer = 2;
+var timer = 5;
 var state = 1;
-var maxState = 19;
+var maxState = 14;
 document.getElementById('song').play();
 
 window.onload =()=> {
@@ -16,7 +16,7 @@ function update()
     if(itr > timer)
     {
         cd(state);
-        if(state >= 14)
+        if(state >= 11)
         {
             timer = 5;
         }
