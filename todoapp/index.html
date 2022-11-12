@@ -34,7 +34,7 @@
         </div>
         <h5>List Baru</h5>
         <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter (maks. 30)" class="txt" maxlength="30">
-        <button @click="addTodo"> Tambah </button>
+        <button @click="addTodo" class="add"> Tambah </button>
         <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
         <section v-else-if="isListed">
             <h5 class="nolist">  Todo List  </h5>

@@ -40,10 +40,10 @@ span div button {
 }
 
 input.txt {
-    margin: 8px 0;
+    margin: 8px 0 2px 0;
     min-width: 40%;
-    max-width: 75%;
-    width: 100%;
+    /* max-width: 75%; */
+    width: 80%;
     padding: 8px;
     background-color:gainsboro;
     border: 1px solid black;
@@ -56,6 +56,10 @@ button {
     color:black;
     padding: 8px;
     border-radius: 20px;
+}
+
+.add {
+    margin-bottom: 12px;
 }
 
 button:hover {
