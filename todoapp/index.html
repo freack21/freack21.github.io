@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <title>ToDoApp + VueJS</title>
+    <title>ToDoApp</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -98,6 +98,10 @@
         }
 
         .nolist {
+            max-width: fit-content;
+        }
+
+        section .nolist {
             display: inline-block;
             max-width: fit-content;
         }
@@ -107,8 +111,8 @@
         }
 
         section button {
-            background-color:greenyellow;
-            color:black;
+            background-color:maroon;
+            color:white;
             margin-left: 4px;
             padding: 4px;
             font-size: small;
@@ -117,20 +121,20 @@
 </head>
 <body>
 <div class="container" id="app">
-    <div v-if="!getName">
+    <span v-if="!getName">
         <h1>{{t1}}</h1>
         <h3 v-text="t2"></h3>
         <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter">
         <button @click="setName"> Lanjut </button>
-    </div>
+    </span>
 
-    <div v-else>
+    <span v-else>
         <h1>Halo, {{nama}}!</h1>
-        <h3>(buat aktifitasmu, buat harimu!)</h3>
+        <h3>(buat aktifitasmu, buat harimu)</h3>
         <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter">
         <button @click="addTodo"> Tambah </button>
-        <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
-        <section v-else>
+        <p v-if="!isListed" class="nolist">~ Tidak ada List ~</p>
+        <section v-if="isListed || getTodo">
             <p class="nolist">~ Todo List ~ <button @click="setTodo">Simpan</button></p>
         </section>
         <ul>
@@ -143,12 +147,12 @@
             {{(!isDone ? '~ ' + yetDone + ' List tersisa ~' : '~ List telah selesai ~')}}
             <button @click="removeAll">Hapus Semua</button>
         </p>
-    </div>
+    </span>
 </div>
 
 <script>
     var datas = {
-        t1: 'ToDo App',
+        t1: 'ToDoApp',
         t2: '(makes your activity)',
         todo: '',
         hapus: 'Hapus',
@@ -192,6 +196,8 @@
     function removeAll() {
         this.todoLi.splice(0, this.todoLi.length);
         this.todone.splice(0, this.todone.length);
+        localStorage.removeItem('todoLi');
+        localStorage.removeItem('todone');
     }
 
     function saveAll() {
