@@ -133,10 +133,11 @@
         <h3>(buat aktifitasmu, buat harimu)</h3>
         <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter">
         <button @click="addTodo"> Tambah </button>
-        <p v-if="!isListed" class="nolist">~ Tidak ada List ~</p>
-        <section v-else-if="isListed || getTodo">
+        <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
+        <section v-else-if="isListed">
             <p class="nolist">~ Todo List ~ <button @click="setTodo">Simpan</button></p>
         </section>
+        <p v-else class="nolist">~ Tidak ada List ~</p>
         <ul>
             <li v-for="(tdl, i) in todoLi">
                 <input type="checkbox" :value="'done' + i" v-model="todone[i]"> {{tdl}} <button @click="removeTodo(i)" v-text="hapus"></button>
@@ -159,8 +160,7 @@
         todoLi: [],
         todone: [],
         nama: '',
-        name: '',
-        first: true
+        name: ''
     }
 
     var app = new Vue({
@@ -168,7 +168,7 @@
         data: datas,
         methods: {
             addTodo, removeTodo, removeAll,
-            setName, saveAll, setTodo
+            setName, setTodo
         },
         computed: {
             isListed: function() {
@@ -198,10 +198,8 @@
         this.todone.splice(0, this.todone.length);
         localStorage.removeItem('todoLi');
         localStorage.removeItem('todone');
-    }
-
-    function saveAll() {
-        setTodo();
+        this.todoLi = [];
+        this.todone = [];
     }
 
     function isDone() {
@@ -229,11 +227,12 @@
     }
 
     function getTodo() {
-        let todoLi = JSON.parse(localStorage.getItem('todoLi'));
-        let todone = JSON.parse(localStorage.getItem('todone'));
+        let todoLi = localStorage.getItem('todoLi');
+        let todone = localStorage.getItem('todone');
+        console.log(todoLi);
         if(todoLi) {
-            this.todoLi = todoLi;
-            this.todone = todone;
+            this.todoLi = JSON.parse(todoLi);
+            this.todone = JSON.parse(todone);
             return true;
         }
         return false;
