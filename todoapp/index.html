@@ -4,163 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>ToDoApp</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color:#aaa;
-        }
-
-        .container {
-            border: 1px solid black;
-            background-color:white;
-            padding: 16px;
-            margin: 16px auto;
-            width: 90%;
-            height: 100%;
-            border-radius: 16px;
-            max-width: 480px;
-        }
-
-        h1, h2, h3 {
-            color:black;
-        }
-
-        span div {
-            border: 1px solid black;
-            border-radius: 0px;
-            margin: 8px -17px;
-            margin-bottom: 0px;
-            padding: 4px 16px;
-        }
-
-        span div button {
-            border: 1px solid black;
-            border-radius: 20px;
-            font-size: x-small;
-        }
-
-        span input:not(.txt) {
-            margin: 8px 2px;
-        }
-
-        input.txt {
-            margin: 8px 0;
-            min-width: 50%;
-            max-width: 80%;
-            width: auto;
-            padding: 8px;
-            background-color:gainsboro;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-
-        button {
-            background-color:bisque;
-            border: 1px solid black;
-            color:black;
-            padding: 8px;
-            border-radius: 10px;
-        }
-
-        button:hover {
-            background-color:black;
-            color:white;
-        }
-
-        button:active {
-            background-color:gray;
-            color:white;
-        }
-
-        ul li {
-            margin-bottom: -1px;
-            color: black;
-            list-style-type:none;
-            border: 1px solid black;
-            padding: 4px;
-            border-radius: 0px;
-            overflow: auto;
-        }
-
-        ul li button {
-            padding: 8px;
-            background-color:black;
-            border: 1px solid black;
-            color:white;
-            border-radius: 8px;
-            float: right;
-        }
-
-        ul li:hover {
-            background-color:#ddd;
-            color:black;
-        }
-
-        ul li button:hover {
-            background-color: maroon;
-            color:white;
-        }
-
-        p button:hover {
-            background-color:firebrick;
-            color:white;
-        }
-
-        p {
-            border: 1px solid black;
-            color:black;
-            padding: 6px;
-            overflow:auto;
-            border-radius: 50px;
-        }
-
-        h4 {
-            border: 1px solid black;
-            color:black;
-            padding: 5px 16px;
-            overflow:auto;
-            border-radius: 50px;
-        }
-
-        p.expl {
-            margin-top: 6px;
-            padding-left: 8px;
-            font-weight: 800;
-            border-radius: 0;
-        }
-
-        .expl button {
-            background-color:maroon;
-            border: 1px solid black;
-            color:white;
-            border-radius: 8px;
-            float: right;
-            font-size: small;
-        }
-        
-        .nolist {
-            max-width: fit-content;
-        }
-
-        section .nolist {
-            display: inline-block;
-            max-width: fit-content;
-        }
-    </style>
 </head>
 <body>
 <div class="container" id="app">
     <span v-if="!getName">
         <h1>{{t1}}</h1>
         <h3 v-text="t2"></h3>
+        <hr>
+        <h5>Nama</h5>
         <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter (maks. 15)" class="txt" maxlength="15">
         <button @click="setName"> Lanjut </button>
     </span>
@@ -184,7 +40,7 @@
         <p v-else class="nolist">~ Tidak ada List ~</p>
         <ul>
             <li v-for="(tdl, i) in todoLi">
-                <input type="checkbox" :value="'done' + i" v-model="todone[i]"> {{tdl}} <button @click="removeTodo(i)" v-text="hapus"></button>
+                <label class="check"> {{tdl}}<input type="checkbox" :value="'done' + i" v-model="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
            </li>
         </ul>
         <p v-if="isListed" class="expl">
@@ -194,112 +50,6 @@
     </span>
 </div>
 
-<script>
-    var datas = {
-        t1: 'ToDoApp',
-        t2: '(makes your activity)',
-        todo: '',
-        hapus: 'Hapus',
-        todoLi: [],
-        todone: [],
-        nama: '',
-        name: ''
-    }
-
-    var app = new Vue({
-        el:'#app',
-        data: datas,
-        methods: {
-            addTodo, removeTodo, removeAll,
-            setName, setTodo, changeName,
-            resetAll: function() {
-                this.removeAll();
-                this.changeName();
-            }
-        },
-        computed: {
-            isListed: function() {
-                return (this.todoLi.length != 0);
-            },
-            isDone, yetDone,
-            getName,
-            getTodo,
-        }
-    });
-
-    function addTodo() {
-        if(this.todo.trim() != '') {
-            this.todoLi.push(this.todo);
-            this.todone.push(false);
-        }
-        this.todo = '';
-    }
-
-    function removeTodo(i) {
-        this.todoLi.splice(i, 1);
-        this.todone.splice(i, 1);
-    }
-
-    function removeAll() {
-        this.todoLi.splice(0, this.todoLi.length);
-        this.todone.splice(0, this.todone.length);
-        localStorage.removeItem('todoLi');
-        localStorage.removeItem('todone');
-        this.todoLi = [];
-        this.todone = [];
-    }
-
-    function isDone() {
-        for(var i = 0; i < this.todoLi.length; i++) {
-            if(!this.todone[i])
-                return false;
-        }
-        return true;
-    }
-
-    function yetDone() {
-        var jml = 0;
-        for(var i = 0; i < this.todoLi.length; i++) {
-            if(!this.todone[i])
-                jml++;
-        }
-        return jml;
-    }
-
-    function getName() {
-        this.nama = localStorage.getItem('nama');
-        console.log(this.nama);
-        if(!this.nama)
-            return false;
-        return true;
-    }
-
-    function getTodo() {
-        let todoLi = localStorage.getItem('todoLi');
-        let todone = localStorage.getItem('todone');
-        console.log(todoLi);
-        if(todoLi) {
-            this.todoLi = JSON.parse(todoLi);
-            this.todone = JSON.parse(todone);
-            return true;
-        }
-        return false;
-    }
-
-    function setTodo() {
-        localStorage.setItem('todoLi', JSON.stringify(this.todoLi));
-        localStorage.setItem('todone', JSON.stringify(this.todone));
-    }
-
-    function setName() {
-        this.nama = localStorage.setItem('nama', this.name);
-        this.name = '';
-    }
-
-    function changeName() {
-        localStorage.removeItem('nama');
-        this.nama = null;
-    }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
