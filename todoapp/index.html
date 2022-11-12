@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>ToDoApp + VueJS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color:khaki;
+        }
+
+        div {
+            border: 1px solid black;
+            background-color:sienna;
+            padding: 16px;
+            margin: 16px auto;
+            width: 85%;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        h1, h2, h3 {
+            color:white;
+        }
+
+        input {
+            margin: 8px 0;
+            padding: 8px;
+            background-color:gainsboro;
+            border: 1px solid darkslategrey;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color:bisque;
+            border: 1px solid darkslategrey;
+            color:darkslategray;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        ul li {
+            margin: -2px 0;
+            color: aliceblue;
+            list-style-type:none;
+            border: 2px solid lavender;
+            padding: 4px;
+            border-radius: 8px;
+            overflow: auto;
+        }
+
+        ul li:hover {
+            background-color:peru;
+            color:black;
+        }
+
+        ul li button:hover {
+            background-color: red;
+            color:white;
+        }
+
+        p button:hover {
+            background-color: red;
+            color:white;
+        }
+
+        ul li button {
+            padding: 8px;
+            background-color:black;
+            border: 1px solid black;
+            color:white;
+            border-radius: 6px;
+            float: right;
+        }
+
+        p button {
+            background-color:maroon;
+            border: 1px solid black;
+            color:white;
+            border-radius: 6px;
+            float: right;
+        }
+
+        p {
+            border: 2px solid white;
+            color:antiquewhite;
+            padding: 6px;
+            border-radius: 6px;
+            overflow:auto;
+        }
+
+        .nolist {
+            display: inline-block;
+            max-width: fit-content;
+        }
+
+        section {
+            margin-bottom: -6px;
+        }
+
+        section button {
+            background-color:greenyellow;
+            color:black;
+            margin-left: 4px;
+            padding: 4px;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="app">
+    <div v-if="!getName">
+        <h1>{{t1}}</h1>
+        <h3 v-text="t2"></h3>
+        <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter">
+        <button @click="setName"> Lanjut </button>
+    </div>
+
+    <div v-else>
+        <h1>Halo, {{nama}}!</h1>
+        <h3>(buat aktifitasmu, buat harimu!)</h3>
+        <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter">
+        <button @click="addTodo"> Tambah </button>
+        <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
+        <section v-else>
+            <p class="nolist">~ Todo List ~ <button @click="setTodo">Simpan</button></p>
+        </section>
+        <ul>
+            <li v-for="(tdl, i) in todoLi">
+                <input type="checkbox" :value="'done' + i" v-model="todone[i]"> {{tdl}} <button @click="removeTodo(i)" v-text="hapus"></button>
+           </li>
+        </ul>
+        <br v-if="isListed">
+        <p v-if="isListed">
+            {{(!isDone ? '~ ' + yetDone + ' List tersisa ~' : '~ List telah selesai ~')}}
+            <button @click="removeAll">Hapus Semua</button>
+        </p>
+    </div>
+</div>
+
+<script>
+    var datas = {
+        t1: 'ToDo App',
+        t2: '(makes your activity)',
+        todo: '',
+        hapus: 'Hapus',
+        todoLi: [],
+        todone: [],
+        nama: '',
+        name: '',
+        first: true
+    }
+
+    var app = new Vue({
+        el:'#app',
+        data: datas,
+        methods: {
+            addTodo, removeTodo, removeAll,
+            setName, saveAll, setTodo
+        },
+        computed: {
+            isListed: function() {
+                return (this.todoLi.length != 0);
+            },
+            isDone, yetDone,
+            getName,
+            getTodo,
+        }
+    });
+
+    function addTodo() {
+        if(this.todo.trim() != '') {
+            this.todoLi.push(this.todo);
+            this.todone.push(false);
+        }
+        this.todo = '';
+    }
+
+    function removeTodo(i) {
+        this.todoLi.splice(i, 1);
+        this.todone.splice(i, 1);
+    }
+
+    function removeAll() {
+        this.todoLi.splice(0, this.todoLi.length);
+        this.todone.splice(0, this.todone.length);
+    }
+
+    function saveAll() {
+        setTodo();
+    }
+
+    function isDone() {
+        for(var i = 0; i < this.todoLi.length; i++) {
+            if(!this.todone[i])
+                return false;
+        }
+        return true;
+    }
+
+    function yetDone() {
+        var jml = 0;
+        for(var i = 0; i < this.todoLi.length; i++) {
+            if(!this.todone[i])
+                jml++;
+        }
+        return jml;
+    }
+
+    function getName() {
+        this.nama = localStorage.getItem('nama');
+        if(!this.nama)
+            return false;
+        return true;
+    }
+
+    function getTodo() {
+        let todoLi = JSON.parse(localStorage.getItem('todoLi'));
+        let todone = JSON.parse(localStorage.getItem('todone'));
+        if(todoLi) {
+            this.todoLi = todoLi;
+            this.todone = todone;
+            return true;
+        }
+        return false;
+    }
+
+    function setTodo() {
+        localStorage.setItem('todoLi', JSON.stringify(this.todoLi));
+        localStorage.setItem('todone', JSON.stringify(this.todone));
+    }
+
+    function setName() {
+        this.nama = localStorage.setItem('nama', this.name);
+    }
+</script>
+</body>
+</html>
