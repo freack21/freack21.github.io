@@ -11,65 +11,83 @@
             margin: 0;
             padding: 0;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
         }
 
         body {
-            background-color:khaki;
+            background-color:#aaa;
         }
 
-        div {
+        .container {
             border: 1px solid black;
-            background-color:sienna;
+            background-color:white;
             padding: 16px;
             margin: 16px auto;
-            width: 85%;
+            width: 90%;
             height: 100%;
             border-radius: 16px;
+            max-width: 480px;
         }
 
         h1, h2, h3 {
-            color:white;
+            color:black;
         }
 
-        input {
+        span div {
+            border: 1px solid black;
+            border-radius: 0px;
+            margin: 8px -17px;
+            margin-bottom: 0px;
+            padding: 4px 16px;
+        }
+
+        span div button {
+            border: 1px solid black;
+            border-radius: 20px;
+            font-size: x-small;
+        }
+
+        span input:not(.txt) {
+            margin: 8px 2px;
+        }
+
+        input.txt {
             margin: 8px 0;
+            min-width: 50%;
+            max-width: 80%;
+            width: auto;
             padding: 8px;
             background-color:gainsboro;
-            border: 1px solid darkslategrey;
-            border-radius: 6px;
+            border: 1px solid black;
+            border-radius: 10px;
         }
 
         button {
             background-color:bisque;
-            border: 1px solid darkslategrey;
-            color:darkslategray;
+            border: 1px solid black;
+            color:black;
             padding: 8px;
-            border-radius: 6px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color:black;
+            color:white;
+        }
+
+        button:active {
+            background-color:gray;
+            color:white;
         }
 
         ul li {
-            margin: -2px 0;
-            color: aliceblue;
+            margin-bottom: -1px;
+            color: black;
             list-style-type:none;
-            border: 2px solid lavender;
+            border: 1px solid black;
             padding: 4px;
-            border-radius: 8px;
+            border-radius: 0px;
             overflow: auto;
-        }
-
-        ul li:hover {
-            background-color:peru;
-            color:black;
-        }
-
-        ul li button:hover {
-            background-color: red;
-            color:white;
-        }
-
-        p button:hover {
-            background-color: red;
-            color:white;
         }
 
         ul li button {
@@ -77,26 +95,57 @@
             background-color:black;
             border: 1px solid black;
             color:white;
-            border-radius: 6px;
+            border-radius: 8px;
             float: right;
         }
 
-        p button {
-            background-color:maroon;
-            border: 1px solid black;
+        ul li:hover {
+            background-color:#ddd;
+            color:black;
+        }
+
+        ul li button:hover {
+            background-color: maroon;
             color:white;
-            border-radius: 6px;
-            float: right;
+        }
+
+        p button:hover {
+            background-color:firebrick;
+            color:white;
         }
 
         p {
-            border: 2px solid white;
-            color:antiquewhite;
+            border: 1px solid black;
+            color:black;
             padding: 6px;
-            border-radius: 6px;
             overflow:auto;
+            border-radius: 50px;
         }
 
+        h4 {
+            border: 1px solid black;
+            color:black;
+            padding: 5px 16px;
+            overflow:auto;
+            border-radius: 50px;
+        }
+
+        p.expl {
+            margin-top: 6px;
+            padding-left: 8px;
+            font-weight: 800;
+            border-radius: 0;
+        }
+
+        .expl button {
+            background-color:maroon;
+            border: 1px solid black;
+            color:white;
+            border-radius: 8px;
+            float: right;
+            font-size: small;
+        }
+        
         .nolist {
             max-width: fit-content;
         }
@@ -105,18 +154,6 @@
             display: inline-block;
             max-width: fit-content;
         }
-
-        section {
-            margin-bottom: -6px;
-        }
-
-        section button {
-            background-color:maroon;
-            color:white;
-            margin-left: 4px;
-            padding: 4px;
-            font-size: small;
-        }
     </style>
 </head>
 <body>
@@ -124,18 +161,25 @@
     <span v-if="!getName">
         <h1>{{t1}}</h1>
         <h3 v-text="t2"></h3>
-        <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter">
+        <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter (maks. 15)" class="txt" maxlength="15">
         <button @click="setName"> Lanjut </button>
     </span>
 
     <span v-else>
         <h1>Halo, {{nama}}!</h1>
         <h3>(buat aktifitasmu, buat harimu)</h3>
-        <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter">
+        <div>
+            <button @click="setTodo">Simpan</button>
+            <button @click="changeName"> Edit Nama </button>
+            <button @click="resetAll">Reset Data</button>
+            <!-- <button > Buat Todo </button>
+            <button > Buat Jadwal </button> -->
+        </div>
+        <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter (maks. 30)" class="txt" maxlength="30">
         <button @click="addTodo"> Tambah </button>
         <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
         <section v-else-if="isListed">
-            <p class="nolist">~ Todo List ~ <button @click="setTodo">Simpan</button></p>
+            <h4 class="nolist">  Todo List  </h4>
         </section>
         <p v-else class="nolist">~ Tidak ada List ~</p>
         <ul>
@@ -143,9 +187,8 @@
                 <input type="checkbox" :value="'done' + i" v-model="todone[i]"> {{tdl}} <button @click="removeTodo(i)" v-text="hapus"></button>
            </li>
         </ul>
-        <br v-if="isListed">
-        <p v-if="isListed">
-            {{(!isDone ? '~ ' + yetDone + ' List tersisa ~' : '~ List telah selesai ~')}}
+        <p v-if="isListed" class="expl">
+            {{(!isDone ? yetDone + ' list tersisa' : 'List telah selesai')}}
             <button @click="removeAll">Hapus Semua</button>
         </p>
     </span>
@@ -168,7 +211,11 @@
         data: datas,
         methods: {
             addTodo, removeTodo, removeAll,
-            setName, setTodo
+            setName, setTodo, changeName,
+            resetAll: function() {
+                this.removeAll();
+                this.changeName();
+            }
         },
         computed: {
             isListed: function() {
@@ -221,6 +268,7 @@
 
     function getName() {
         this.nama = localStorage.getItem('nama');
+        console.log(this.nama);
         if(!this.nama)
             return false;
         return true;
@@ -245,6 +293,12 @@
 
     function setName() {
         this.nama = localStorage.setItem('nama', this.name);
+        this.name = '';
+    }
+
+    function changeName() {
+        localStorage.removeItem('nama');
+        this.nama = null;
     }
 </script>
 </body>
