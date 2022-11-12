@@ -134,7 +134,7 @@
         <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter">
         <button @click="addTodo"> Tambah </button>
         <p v-if="!isListed" class="nolist">~ Tidak ada List ~</p>
-        <section v-if="isListed || getTodo">
+        <section v-else-if="isListed || getTodo">
             <p class="nolist">~ Todo List ~ <button @click="setTodo">Simpan</button></p>
         </section>
         <ul>
