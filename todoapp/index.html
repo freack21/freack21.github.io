@@ -15,6 +15,7 @@
     <span v-if="!getName">
         <h1>{{t1}}</h1>
         <h3 v-text="t2"></h3>
+        <h6>by. Freack</h6>
         <hr>
         <h5>Nama</h5>
         <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter (maks. 15)" class="txt" maxlength="15">
@@ -23,7 +24,7 @@
 
     <span v-else>
         <h1>Halo, {{nama}}!</h1>
-        <h3>(buat aktifitasmu, buat harimu)</h3>
+        <h4>buat aktifitasmu, buat harimu</h4>
         <div>
             <button @click="setTodo">Simpan</button>
             <button @click="changeName"> Edit Nama </button>
@@ -31,11 +32,12 @@
             <!-- <button > Buat Todo </button>
             <button > Buat Jadwal </button> -->
         </div>
+        <h5>List Baru</h5>
         <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter (maks. 30)" class="txt" maxlength="30">
         <button @click="addTodo"> Tambah </button>
         <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
         <section v-else-if="isListed">
-            <h4 class="nolist">  Todo List  </h4>
+            <h5 class="nolist">  Todo List  </h5>
         </section>
         <p v-else class="nolist">~ Tidak ada List ~</p>
         <ul>
