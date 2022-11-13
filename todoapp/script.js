@@ -1,6 +1,6 @@
 var datas = {
-    t1: 'ToDoApp',
-    t2: '(makes your activity)',
+    t1: 'Halo',
+    t2: '!',
     todo: '',
     hapus: 'Hapus',
     todoLi: [],
@@ -19,7 +19,8 @@ var app = new Vue({
             this.removeAll();
             this.changeName();
             this.name = '';
-        }
+        },
+        doneAll
     },
     computed: {
         isListed: function() {
@@ -28,6 +29,24 @@ var app = new Vue({
         isDone, yetDone,
         getName,
         getTodo,
+        greet: function(j) {
+            let i = Math.random();
+            if(i > 0.8)
+                this.t1 = "Assalamu'alaikum";
+            else if(i > 0.6)
+                this.t1 = 'Semoga Harimu Menyenangkan';
+            else if(i > 0.5)
+            {
+                this.t2 = '?';
+                this.t1 = 'Bagaimana Harimu';
+            }
+            else if(i > 0.3)
+                this.t1 = 'Semangat';
+            else
+                this.t1 = 'Halo';
+
+            return this.t1;
+        }
     }
 });
 
@@ -53,6 +72,15 @@ function removeAll() {
     this.todone = [];
 }
 
+function doneAll(b) {
+    if(this.todone) {
+        for(let i = 0; i < this.todone.length; i++)
+            this.todone.splice(i, 1, b);
+
+        this.setTodo();
+    }
+}
+
 function isDone() {
     for(var i = 0; i < this.todoLi.length; i++) {
         if(!this.todone[i])
@@ -72,7 +100,6 @@ function yetDone() {
 
 function getName() {
     this.nama = localStorage.getItem('nama');
-    console.log(this.nama);
     if(!this.nama)
         return false;
     return true;
@@ -81,8 +108,7 @@ function getName() {
 function getTodo() {
     let todoLi = localStorage.getItem('todoLi');
     let todone = localStorage.getItem('todone');
-    console.log(todoLi);
-    if(todoLi) {
+    if(todoLi && todone) {
         this.todoLi = JSON.parse(todoLi);
         this.todone = JSON.parse(todone);
         return true;

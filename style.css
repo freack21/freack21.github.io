@@ -1,25 +1,38 @@
-body {
-    background-color:burlywood;
+body{
+    background-color: darkcyan;
 }
 
-.base {
+h3, h4 {
+    color:teal;
+    font-family: 'Rubik', sans-serif;
 }
 
-.top {
+.container {
+    width: 360px;
+    height:480px;
+    background-color: powderblue;
+    border-radius: 16px;
     position: relative;
+    overflow: hidden;
+}
+
+audio {
+    display: none;
+}
+
+.center {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.mid {
-    position: relative;
-    margin: auto;
-}
+#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15 {
+    text-align: center;
+} 
 
-.bot {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#c16,#c18,#c19,#c20,#c17,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15 {
+    display: none;
 }

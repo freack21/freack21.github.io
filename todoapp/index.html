@@ -12,9 +12,9 @@
 </head>
 <body>
 <div class="container" id="app">
-    <span v-if="!getName">
-        <h1>{{t1}}</h1>
-        <h3 v-text="t2"></h3>
+    <span v-if="!getName" id="name">
+        <h1>ToDoApp</h1>
+        <h3>(makes your activity)</h3>
         <h6>by. Freack</h6>
         <hr>
         <h5>Nama</h5>
@@ -22,10 +22,10 @@
         <button @click="setName"> Lanjut </button>
     </span>
 
-    <span v-else>
-        <h1>Halo, {{nama}}!</h1>
+    <span v-else id="list">
+        <h1>{{greet}}, {{nama}}{{t2}}</h1>
         <h4>buat aktifitasmu, buat harimu</h4>
-        <div>
+        <div class="nav">
             <button @click="setTodo">Simpan</button>
             <button @click="changeName"> Edit Nama </button>
             <button @click="resetAll">Reset Data</button>
@@ -37,17 +37,19 @@
         <button @click="addTodo" class="add"> Tambah </button>
         <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
         <section v-else-if="isListed">
-            <h5 class="nolist">  Todo List  </h5>
+            <h3 class="expl">  Todo List  </h3>
         </section>
         <p v-else class="nolist">~ Tidak ada List ~</p>
-        <ul>
+        <ul class="todoList">
             <li v-for="(tdl, i) in todoLi">
-                <label class="check"> {{tdl}}<input type="checkbox" :value="'done' + i" v-model="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
+                <label class="check"> {{tdl}}<input type="checkbox" v-model="todone[i]" :value="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
            </li>
         </ul>
         <p v-if="isListed" class="expl">
             {{(!isDone ? yetDone + ' list tersisa' : 'List telah selesai')}}
             <button @click="removeAll">Hapus Semua</button>
+            <button @click="doneAll(true)" class="mark" v-if="!isDone">Tandai Semua</button>
+            <button @click="doneAll(false)" class="mark" v-else>Batal Tandai Semua</button>
         </p>
     </span>
 </div>
