@@ -29,7 +29,7 @@ var app = new Vue({
         isDone, yetDone,
         getName,
         getTodo,
-        greet: function(j) {
+        greet: function() {
             let i = Math.random();
             if(i > 0.8)
                 this.t1 = "Assalamu'alaikum";
