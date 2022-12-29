@@ -78,12 +78,12 @@ header .nav .botbar a:hover {
     background-color: orange;
 }
 
-header .email {
+header .email a {
     padding: 14px 16px;
     border-radius: 50%;
 }
 
-header .email:hover {
+header .email a:hover {
     background-color: orange;
     cursor: pointer;
 }
@@ -101,11 +101,11 @@ main {
 #home .intro {
     display: flex;
     justify-content: space-between;
-    /* border-radius: 10px; */
-    /* border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; */
+    /* border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #eee; */
     align-items: center;
-    background-color: #eee;
     padding: 5%;
 }
 
