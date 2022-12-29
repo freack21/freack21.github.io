@@ -262,3 +262,8 @@ h5 {
     transform: rotate(45deg);
 }
 
+.done {
+    text-decoration: line-through;
+    color: #444;
+    font-style: italic;
+}

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>ToDoApp</title>
 </head>
@@ -42,7 +43,7 @@
         <p v-else class="nolist">~ Tidak ada List ~</p>
         <ul class="todoList">
             <li v-for="(tdl, i) in todoLi">
-                <label class="check"> {{tdl}}<input type="checkbox" v-model="todone[i]" :value="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
+                <label class="check" :class="{'done' : todone[i]}"> {{tdl}}<input type="checkbox" v-model="todone[i]" :value="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
            </li>
         </ul>
         <p v-if="isListed" class="expl">
