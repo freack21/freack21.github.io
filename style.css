@@ -219,14 +219,16 @@ main {
     }
 
     #project .item {
-        background-color: #000;
+        background-color: #eee;
         flex-direction: column;
         align-items: center;
     }
 
     #project .item div {
-        background-color: #aaa;
+        background-color: #000;
         width: 80%;
+        min-width: none;
+        max-width: 420px;
         margin-bottom: 10%;
     }
 
