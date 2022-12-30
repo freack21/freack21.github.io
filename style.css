@@ -219,7 +219,7 @@ main {
     }
 
     #project .item div {
-        width: 80%;
+        width: 50%;
         max-width: 480px;
         margin-bottom: 10%;
     }
