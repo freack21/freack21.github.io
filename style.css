@@ -220,6 +220,8 @@ main {
 
     #project .item {
         background-color: #aaa;
+        flex-direction: column;
+        align-items: center;
     }
 
     #project .item div {
