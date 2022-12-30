@@ -1,8 +1,8 @@
 var datas = {
-    t1: 'Halo',
+    t1: 'Hello',
     t2: '!',
     todo: '',
-    hapus: 'Hapus',
+    hapus: 'Delete',
     todoLi: [],
     todone: [],
     nama: '',
@@ -34,16 +34,16 @@ var app = new Vue({
             if(i > 0.8)
                 this.t1 = "Assalamu'alaikum";
             else if(i > 0.6)
-                this.t1 = 'Semoga Harimu Menyenangkan';
+                this.t1 = 'Have a nice day';
             else if(i > 0.5)
             {
                 this.t2 = '?';
-                this.t1 = 'Bagaimana Harimu';
+                this.t1 = 'How was your day';
             }
             else if(i > 0.3)
-                this.t1 = 'Semangat';
+                this.t1 = 'Keep your spirits up';
             else
-                this.t1 = 'Halo';
+                this.t1 = 'Hello';
 
             return this.t1;
         }

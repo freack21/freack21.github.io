@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,39 +18,39 @@
         <h3>(makes your activity)</h3>
         <h6>by. Freack</h6>
         <hr>
-        <h5>Nama</h5>
-        <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="masukkan nama, lalu enter (maks. 15)" class="txt" maxlength="15">
-        <button @click="setName"> Lanjut </button>
+        <h5>Name</h5>
+        <input type="text" v-model="name" v-on:keyup.enter="setName" placeholder="enter your name (max. 15)" class="txt" maxlength="15">
+        <button @click="setName"> Continue </button>
     </span>
 
     <span v-else id="list">
         <h1>{{greet}}, {{nama}}{{t2}}</h1>
-        <h4>buat aktifitasmu, buat harimu</h4>
+        <h4>make your activities, make your day</h4>
         <div class="nav">
-            <button @click="setTodo">Simpan</button>
-            <button @click="changeName"> Edit Nama </button>
+            <button @click="setTodo">Save</button>
+            <button @click="changeName"> Edit Name </button>
             <button @click="resetAll">Reset Data</button>
             <!-- <button > Buat Todo </button>
             <button > Buat Jadwal </button> -->
         </div>
-        <h5>List Baru</h5>
-        <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="tulis list, lalu enter (maks. 30)" class="txt" maxlength="30">
-        <button @click="addTodo" class="add"> Tambah </button>
-        <p v-if="!isListed && !getTodo" class="nolist">~ Tidak ada List ~</p>
+        <h5>New Todo</h5>
+        <input type="text" v-model="todo" v-on:keyup.enter="addTodo" placeholder="write new todo (max. 30)" class="txt" maxlength="30">
+        <button @click="addTodo" class="add"> Add </button>
+        <p v-if="!isListed && !getTodo" class="nolist">~ No List ~</p>
         <section v-else-if="isListed">
             <h3 class="expl">  Todo List  </h3>
         </section>
-        <p v-else class="nolist">~ Tidak ada List ~</p>
+        <p v-else class="nolist">~ No List ~</p>
         <ul class="todoList">
             <li v-for="(tdl, i) in todoLi">
                 <label class="check" :class="{'done' : todone[i]}"> {{tdl}}<input type="checkbox" v-model="todone[i]" :value="todone[i]"><span class="checkmark"></span><button @click="removeTodo(i)">X</button></label>
            </li>
         </ul>
         <p v-if="isListed" class="expl">
-            {{(!isDone ? yetDone + ' list tersisa' : 'List telah selesai')}}
-            <button @click="removeAll">Hapus Semua</button>
-            <button @click="doneAll(true)" class="mark" v-if="!isDone">Tandai Semua</button>
-            <button @click="doneAll(false)" class="mark" v-else>Batal Tandai Semua</button>
+            {{(!isDone ? yetDone + ' list left' : 'List has been completed')}}
+            <button @click="removeAll">Remove All</button>
+            <button @click="doneAll(true)" class="mark" v-if="!isDone">Mark All Done</button>
+            <button @click="doneAll(false)" class="mark" v-else>Cancel Mark All Done</button>
         </p>
     </span>
 </div>
