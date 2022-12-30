@@ -220,8 +220,8 @@ main {
 
     #project .item div {
         width: 80%;
-        max-width: 360px;
-        margin-bottom: 5%;
+        max-width: 480px;
+        margin-bottom: 10%;
     }
 
     #project h1 {
