@@ -17,7 +17,7 @@ a {
     color: inherit;
 }
 
-button {
+button, .btn {
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 5px 10px;
@@ -25,7 +25,7 @@ button {
     margin: 4px 0;
 }
 
-button:hover {
+button:hover, .btn:hover {
     cursor: pointer;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
 }
@@ -103,8 +103,8 @@ main {
     justify-content: space-between;
     /* border-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: #eee; */
+    border-bottom-right-radius: 10px; */
+    background-color: #eee;
     align-items: center;
     padding: 5%;
 }
@@ -134,6 +134,57 @@ main {
     margin: 8px 0;
 }
 
+#project {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#project h1 {
+    text-align: center;
+}
+
+#project .item {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#project .item div {
+    box-shadow: 0px 0 4px 1px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 8px;
+    min-width: 320px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+#project .item div:hover {
+    box-shadow: 0px 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#project .item h2 {
+    margin: 4px 0;
+}
+
+#project .item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#project .item div a {
+    background-color:royalblue;
+    color: white;
+    margin: 8px;
+}
 @media(max-width: 720px) {
     .container {
         margin-bottom: 96px;
@@ -165,5 +216,16 @@ main {
 
     #home .intro img {
         margin: 8px 0;
+    }
+
+    #project .item div {
+        width: 80%;
+        max-width: 360px;
+        margin-bottom: 5%;
+    }
+
+    #project h1 {
+        text-align: left;
+        margin: 2%;
     }
 }
