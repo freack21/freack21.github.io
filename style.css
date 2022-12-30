@@ -145,7 +145,7 @@ main {
 }
 
 #project .item {
-    margin: 2%;
+    /* margin: 2%; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -164,7 +164,7 @@ main {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
 }
 
 #project .item div:hover {
@@ -220,7 +220,7 @@ main {
 
     #project .item div {
         width: 80%;
-        max-width: 480px;
+        max-width: 240px;
         margin-bottom: 10%;
     }
 
