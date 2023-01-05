@@ -1,251 +1,75 @@
-
 <!DOCTYPE html>
-<html lang="in">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pikli & Sasa | Mensiversary</title>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Ibarra+Real+Nova&family=Playfair+Display&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-	<style>
-	body, html {
-		font-family: "Ibarra Real Nova", sans-serif;
-	}
-	
-	h1, h3 {
-		font-family: "Great Vibes", cursive;
-	}
-	
-	h2,h5,h6 {
-		font-family: 'Playfair Display', cursive;
-	}
- 
-    .cro {
-        height: 100%;
-        clip-path: inset(20px 20px 50px 0 round 20px);
-    }
-	body, html {
-		height: 100%;
-		margin:0;
-		padding:0;
-		background-color:wheat;
-	}
-	
-	.gray {
-		background-color: wheat;
-	}
-	
-	.wh {
-		background-color:#f6f6f6;
-	}
-	
-	.pages {
-		display : none;
-	}
-	
-	.bg {
-		background-color: rgba(0,0,0,0.5);
-	}
-	
-	.bgr {
-		height:60%;
-		background-color:#f8f8f8;
-	}
-	
-	.bgimg, .bgimg2 {
-		min-height: 100%;
-		background-position: center;
-		background-size: cover;
-	}
-	
-	.xc {
-		text-decoration: none;
-		font-weight: 20px;
-		
-	}
-	
-	
-	.bgimg {
-        background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwMu16MbQO_RYaZDck7kFdaUQakcw1Ctwh-pX5LP8NzOjHQ6Cw4U7lYxjKaV652A_EUqq0xPhZJhi6H4ku0btqg2xZoaoYUHG7iXaMqF9cU2bmD4gaTfSZsffb0OCmrg-RO9zD5QPDiKXSvAtmHIY1vnTWlL7oVA4syatd_TH2O4ilHdZVeZHT3BH9/s898/bg.jpg");
-        filter:sepia(0.5);
-	}
-	
-	
-	
-	@media(min-width:601px) {
-		.page {
-			margin-left: 20%;
-		}
-		
-	}
-	</style>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/05653d52c8.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<title>Fikri & Sasa Mensiversary</title>
 </head>
 <body>
-	<!-- BOTBAR -->
-	<div class="w3-bottom w3-hide-medium w3-hide-large">
-		<div class="w3-bar w3-row w3-brown w3-medium">
-			<div class="w3-col s5 ">
-				<a class="w3-btn w3-bar-item tab" href="#home" onclick="openTab(event, 'home');" id="mt">BERANDA</a>
-			</div>
-			<div class="w3-col s3">
-				<a class="w3-btn w3-bar-item tab" href="#us" onclick="openTab(event, 'us');">KITA</a>
-			</div>
-			<div class="w3-col s4">
-				<a class="w3-btn w3-bar-item tab" href="#sch" onclick="openTab(event, 'sch');">MENSIVE</a>
-			</div>
-			
-		   
-		</div>
+<audio controls loop preload="none" id="audio">
+	<source src="music.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>
+<div id="container">
+	<div id="card">
+		<button id="i1" onclick="animasi();"><i class="fa-solid fa-play"></i> START</button>
+		<h1 id="i2">HALOO BUBUBBB!</h1>
+		<h1 id="i3">UDAH MAM BELOM??</h1>
+		<h1 id="i4">TUGASNYA UDAH SELESAI BELOM?</h1>
+		<h1 id="i5">akhirnya kita ketemu tanggal 6 lagii <i class="fa-regular fa-face-laugh-beam"></i></h1>
+		<h1 id="i6">udah yang keberapa kali ya sayang?</h1>
+		<h1 id="i7">ke tujuh ratus ribu belas yaa? <i class="fa-regular fa-face-laugh-squint"></i></h1>
+		<h1 id="i8">kamu pengen apa di mensive kita sayang??</h1>
+		<h1 id="i9">udah yang ke-7 loh</h1>
+		<h1 id="i10">kalo kredit motor udah mau lunas inii <i class="fa-regular fa-face-laugh-squint"></i></h1>
+		<h1 id="i11">mau anak bub? katanya mau 3 yaa?? wkwkwk<i class="fa-regular fa-face-laugh-squint"></i></h1>
+		<h1 id="i12">langgeng terus ya sayangg</h1>
+		<h1 id="i13">jangan pernah bosen sama kitaa</h1>
+		<h1 id="i14">sehat-sehat terus kitaa</h1>
+		<h1 id="i15">rajin-rajin terus kitaaa</h1>
+		<h1 id="i16">semoga apa yang kita berdua inginkan cepet terkabul</h1>
+		<h1 id="i17">aamiinn <i class="fa-regular fa-face-smile-beam"></i></h1>
+		<h1 id="i18">love u ma bububb <i class="fa-regular fa-heart"></i><i class="fa-regular fa-heart"></i></h1>
+		<h1 id="i19">love u cintaku, sayangku, pacarku, cantikku, manisku, gemasku, lucuku, pinterku...</h1>
+		<h1 id="i20">..kambingku, bayiku, duniaku, semuanyaaaaaaa <i class="fa-regular fa-face-laugh-squint"></i><i class="fa-regular fa-face-laugh-squint"></i><i class="fa-regular fa-face-laugh-squint"></i></h1>
+		<h1 id="i21">happy 7th Mensiversary sayanggg</h1>
+		<h1 id="i22">pikli<br/><i class="fa-regular fa-heart"></i><br/>sasa</h1>
+		<h1 id="i23">Fikri Rivandi<br/><i class="fa-regular fa-heart"></i><br/>Sahira Afika Rahma Dina</h1>
+		<h1 id="i24">the end...</h1>
+		<h1 id="i25">
+			<a href="https://wa.me/6282286230830?text=halo bubub, iya sasa mau 3, 30 tapi yaaa wkwkwk"><i class="fa-brands fa-whatsapp"></i></a>
+		</h1>
 	</div>
+</div>
 
+<script>
+$("#audio").trigger('load');
+let iv = null;
+let i = 1;
+let j = function() {
+     if(i < 25) {
+		$(`#i${i}`).hide();
+		$(`#i${i + 1}`).show();
+		console.log(i);
+		i++;
+          /* your code goes here */
+     } else {
+          clearInterval(iv);
+     }
+};
 
-    <!-- SIDEBAR -->
-	<div class="w3-sidebar w3-brown w3-hide-small">
-			<a id="mt" class="w3-btn w3-bar-item w3-block tab" href="#home" onclick="openTab(event, 'home');">BERANDA</a>
-			<a class="w3-btn w3-bar-item w3-block tab" href="#us" onclick="openTab(event, 'us');">KITA<a>
-			<a class="w3-btn w3-bar-item w3-block tab" href="#sch" onclick="openTab(event, 'sch');">MENSIVE</a>
-			
-	</div>
-	
-	
-	
-	<!-- HOME -->
-	<header class="w3-display-container w3-wide bgimg w3-grayscal page" id="home">
-
-        <div class="w3-display-middle w3-text-black w3-center w3-round-large w3-grayscale-max">
-            <h1 class="w3-jumbo">Pikli</h1>
-            <h1 class="w3-jumbo">&</h1>
-            <h1 class="w3-jumbo">Sasa</h1>
-            <h3>-Mensiversary-</h3>
-			 <h3><b>6 November 2022</b></h3>
-             </div>
-    </header>
-
-
-    <!-- MEMPELAI -->
-	<div class="page" id="us">
-		<div class="w3-tag w3-xxlarge w3-padding w3-leftbar w3-brown w3-border-pale-yellow w3-margin w3-card-4">
-            <h2>Pikli & Sasa</h2>
-		</div>
-
-        <div class="w3-container w3-center" >
-			<div class="w3-card-4 w3-padding w3-margin-bottom w3-margin-top w3-sand w3-round-large">
-				<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiplDDVmXnnVKvE1enzGqFw3rSKidYd10RLuZDtTHpYZJTbDfFAgscsCSwDEpFp9jOskOsDsWOGefUlC0egnNdmZa_td5xBKhhac8eFi4Kddhouj76ym7vM8tGiNdzORCJSOXdlZoFbnoLwIei8zZVM-QVPjTo2nNbuxluuws8eQIAoSKP9K4t_WTT3/s320/cbdb4755-b52a-4140-b438-b472cc6aabf3.jpg" alt="" width="65%" class="w3-round-large w3-border w3-border-dark-gray">
-			
-			<p class="w3-center w3-padding">Pikli, cowo Sasa yang aneh bet. Cowo Sasa yang cemburuan bet, tapi ganteng. wkwk.
-			   </p>
-			   </div>
-			   
-			   <div class="w3-card-4 w3-padding w3-sand w3-round-large" >
-				   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVJ9N_fSIqTVCxEa6eGtbk4FqRHVUoR3M1Z2KqxGMZ1S1P_E0GihAeSVpS8nnywt3f7xV2SObMF6cS34LgE2Kzk9zUQW2omg8f_JZdl79I6SifwPSb8r5jvZYnhxNIZhDcn59uqZd6pAj1h5lodY4cmSNfaBibAyG2oZZgoGd2x8LPO6xtOXFLb0Zi/s320/IMG-20221024-WA0017.jpg" alt="" width="50%" class="w3-round-large w3-border w3-border-gray crop">
-				   <p class="w3-center w3-padding">Sasa, si cantik dan menggemaskan binti pemalass. Hobinya bikin cowonya marah. Dan, suka manja-manja sama cowonyaaa.
-			 </p>
-			   </div>
-			  
-			  
-		</div>
-		<div class="w3-card-2 w3-sand w3-center">
-				  
-			  
-			  <hr>
-	</div>
-	
-	</div>
-	
-	
-	
-	
-	
-	
-	<!-- JADWAL -->
-	<div class="page" id="sch">
-		<div class="w3-tag w3-xxlarge w3-padding w3-leftbar w3-brown w3-border-pale-yellow w3-margin w3-card-4"><h2>Mensive</h2>
-		</div>
-		
-		<div class="w3-card-4 w3-sand w3-panel w3-margin w3-center w3-round-large " >
-			<div class="w3-panel w3-margin w3-sand w3-round-large w3-padding w3-border w3-border-brown">
-                <p class="w3-medium w3-padding w3-justify">
-                    Hari ini, adalah Mensiversary Pikli dan Sasa yang ke-5.<br>Yeyy!!<br><br>Sudah banyak yang Pikli dan Sasa rasakan selama 5 bulan bersama ini. Suka, duka, dilalui bersama. Bahkan, hampir putus dipertengahan jalan.<br><br>Tapi, Pikli yakin bahwa Sasa akan setia. Dan Sasa yakin, bahwa Pikli akan menjemputnyaa.<br><br>Pikli berharap, dengan makin panjangnya waktu bersama, makin melimpah juga rasa sayangnyaa.<br><br><b>Pikli cinta Sasa!!<br>Happy Mensiversary yaa!!</b>
-                </p>
-			</div>
-		
-		
-			<div class="w3-card w3-row w3-center w3-padding w3-margin w3-sand w3-border-brown w3-border">
-				<div class="w3-bar w3-sand">
-					<a href="javascript:void(0)" onclick="openSch(event,'daily');" class="w3-bar-item w3-btn w3-col s6 w3-border w3-border-brown tabs w3-small" id="mts">JADIAN</a>
-					<a href="javascript:void(0)" onclick="openSch(event,'clg');" class="w3-bar-item w3-btn w3-col s6 w3-border w3-border-brown tabs w3-small">MENSIVE</a>
-				</div>
-				
-			</div>
-			
-			<div class="pages" id="daily">
-				<table class="w3-table w3-margin-bottom w3-hovrable ">
-					<tr>
-						<th>TANGGAL</th><th>:</th><td>6 Juni 2022</td>
-					</tr>
-					<tr>
-						<th>JAM</th><th>:</th><td>00.00 WIB</td>
-					</tr>
-				</table>
-			</div>
-			<div class="pages" id="clg">
-				<table class="w3-table w3-margin-bottom w3-hoveable ">
-					<tr>
-						<th>TANGGAL</th><th>:</th><td>6 November 2022</td>
-					</tr>
-					<tr>
-						<th>JAM</th><th>:</th><td>00.00 WIB</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		
-
-         <footer class="w3-container w3-topbar w3-border-sand w3-large w3-padding w3-center w3-margin-bottom ">
-			<p>Powered by <a href="https://www.instagram.com/fkrvndii" target="_blank">Freackck.</a></p>
-		</footer>
-		<div class="w3-card-2 w3-white w3-center w3-margin-bottom">
-            <hr>
-       </div>
-  </div>
-
-
-    <script>
-		function openTab(e, t) {
-			var i, x, ta;
-			
-			ta = document.getElementsByClassName("tab");
-			for(i=0;i<ta.length;i++) {
-				ta[i].className=ta[i].className.replace(" gray","");
-				ta[i].className=ta[i].className.replace(" w3-text-black","");
-			}
-			
-			e.currentTarget.className += " gray";
-			e.currentTarget.className += " w3-text-black";
-			
-		}
-		
-		function openSch(e, t) {
-			var i, x, ta;
-			x = document.getElementsByClassName("pages");
-			for(i=0;i<x.length;i++){
-				x[i].style.display = "none";
-			}
-			ta = document.getElementsByClassName("tabs");
-			for(i=0;i<ta.length;i++) {
-				ta[i].className=ta[i].className.replace(" w3-brown","");			 
-			}
-			document.getElementById(t).style.display ="block";
-			e.currentTarget.className += " w3-brown";
-		}
-		document.getElementById("mt").click();
-		document.getElementById("mts").click();
-		
-	</script>
+function animasi()
+{
+	$('#card').addClass('a1');
+	$('#container').addClass('b1');
+	$('#audio').trigger('play');
+	$(`#i1`).hide();
+	iv = setInterval(j, 5000);
+}
+</script>
 </body>
 </html>
