@@ -1,89 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/05653d52c8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Fikri Rivandi</title>
-</head>
-<body>
-<div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+            rel="stylesheet"
+        />
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+        <script
+            src="https://kit.fontawesome.com/05653d52c8.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="style.css" />
+        <title>Fikri Rivandi</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- header -->
+            <header>
+                <!-- navigation -->
+                <div class="nav">
+                    <h1>F21.</h1>
+                    <ul class="navbar">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#project">Project</a></li>
+                        <li><a href="#skill">Skill</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
 
-<header>
-<div class="nav">
-    <h1>F21.</h1>
-    <ul class="navbar">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Project</a></li>
-        <li><a href="#">Skill</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="botbar">
-        <a href="#" class="active"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-diagram-project"></i></a>
-        <a href="#"><i class="fa-solid fa-rectangle-list"></i></a>
-        <a href="#"><i class="fa-solid fa-user"></i></a>
-        <a href="#"><i class="fa-solid fa-message"></i></a>
-    </div>
-</div>
-<div class="email">
-    <a href="#">
-        <i class="fa-regular fa-envelope"></i>
-    </a>
-</div>
-</header>
+                    <!-- mobile nav -->
+                    <div class="botbar">
+                        <a href="#home" class="active"
+                            ><i class="fa-solid fa-house"></i
+                        ></a>
+                        <a href="#project"
+                            ><i class="fa-solid fa-diagram-project"></i
+                        ></a>
+                        <a href="#skill"
+                            ><i class="fa-solid fa-rectangle-list"></i
+                        ></a>
+                        <a href="#about"><i class="fa-solid fa-user"></i></a>
+                        <a href="#contact"
+                            ><i class="fa-solid fa-message"></i
+                        ></a>
+                    </div>
+                    <!-- mobile nav -->
+                </div>
+                <!-- navigation -->
 
-<main>
-<div id="home">
-    <div class="intro">
-        <div class="jl">
-            <h1>Hello!</h1>
-            <h2>I'm Fikri Rivandi</h2>
-            <p class="small">IT Student | Web Developer | Software Engineer</p>
-            <button>Message Me!</button>
+                <!-- email -->
+                <div class="email">
+                    <a href="#email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
+                <!-- email -->
+            </header>
+            <!-- header -->
+
+            <!-- main -->
+            <main>
+                <!-- home -->
+                <div id="home">
+                    <div class="intro">
+                        <div class="jl">
+                            <h1>Hello!</h1>
+                            <h2>I'm Fikri Rivandi</h2>
+                            <p class="small">
+                                IT Student | Web Developer | Software Engineer
+                            </p>
+                            <a
+                                class="btn"
+                                id="msgme"
+                                href="http://wa.me/6282286230830?text=Hi,%20Fikri!"
+                                target="_blank"
+                                >Message Me!</a
+                            >
+                        </div>
+                        <img src="ava.jpg" alt="Avatar" />
+                    </div>
+                </div>
+                <!-- home -->
+
+                <!-- project -->
+                <div id="project">
+                    <h1 class="tcenter title">My Projects</h1>
+                    <div class="item">
+                        <div class="card">
+                            <img src="todos.png" alt="TodoApp" />
+                            <h2>TodoApp</h2>
+                            <p>Activity scheduler app.</p>
+                            <p class="small"><em>(HTML, CSS, JS, VueJS)</em></p>
+                            <a
+                                href="/todoapp/"
+                                target="_blank"
+                                class="btn small"
+                                ><i class="fa-regular fa-eye"></i> View</a
+                            >
+                        </div>
+                        <div class="card">
+                            <img src="card.png" alt="Card" />
+                            <h2>Greeting Card</h2>
+                            <p>
+                                Greeting cards for birthdays, graduations, and
+                                many others.
+                            </p>
+                            <p class="small"><em>(HTML, CSS, JS)</em></p>
+                            <a href="/card/" target="_blank" class="btn small"
+                                ><i class="fa-regular fa-eye"></i> View</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- project -->
+
+                <hr />
+
+                <!-- skill -->
+                <div id="skill">
+                    <h1 class="tcenter title">My Skill</h1>
+                    <div class="item">
+                        <div class="card">
+                            <img src="/card/s1.png" alt="HTML" />
+                            <h4>HTML</h4>
+                        </div>
+                        <div class="card">
+                            <img src="/card/s2.png" alt="JS" />
+                            <h4>JavaScript</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- skill -->
+            </main>
+            <!-- main -->
         </div>
-        <img src="ava.jpg" alt="Avatar">
-    </div>
-</div>
 
-<div id="project">
-    <h1>My Projects</h1>
-    <div class="item">
-        <div>
-            <img src="todos.png" alt="TodoApp">
-            <h2>TodoApp</h2>
-            <p>Activity scheduler app.</p>
-            <p class="small"><em>(HTML, CSS, JS, VueJS)</em></p>
-            <a href="/todoapp/" target="_blank" class="btn small"><i class="fa-regular fa-eye"></i> View</a>
-        </div>
-        <div>
-            <img src="card.png" alt="Card">
-            <h2>Greeting Card</h2>
-            <p>Greeting cards for birthdays, graduations, and many others.</p>
-            <p class="small"><em>(HTML, CSS, JS)</em></p>
-            <a href="/card/" target="_blank" class="btn small"><i class="fa-regular fa-eye"></i> View</a>
-        </div>
-        <!-- <div>
-            <img src="todos.png" alt="TodoApp">
-            <h2>TodoApp</h2>
-            <p>Aplikasi penjadwal kegiatan.</p>
-            <p class="small"><em>(HTML, CSS, JS, VueJS)</em></p>
-            <a href="/todoapp/" target="_blank" class="btn small"><i class="fa-regular fa-eye"></i> View</a>
-        </div> -->
-    </div>
-</div>
-
-</main>
-
-<footer>
-</footer>
-
-</div>    
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

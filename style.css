@@ -1,10 +1,12 @@
+/* element */
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 4px 0;
 }
 
@@ -17,64 +19,145 @@ a {
     color: inherit;
 }
 
-button, .btn {
-    border-radius: 4px;
+button,
+.btn {
+    border-radius: 0.2rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 5px 10px;
+    padding: 0.3rem 0.6rem;
     background-color: white;
-    margin: 4px 0;
+    font-size: small;
+    margin: 0.2rem 0;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
     cursor: pointer;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
 }
 
+hr {
+    border: 0.5px solid rgba(216, 209, 209, 0.7);
+}
+/* element */
+
+/* def class */
+.tcenter {
+    text-align: center;
+}
+
+.active {
+    color: orangered;
+}
+
+.bg-primary {
+    color: orangered;
+}
+
+.jr {
+    text-align: right;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+/* #project .item { */
+.item {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+}
+
+.item h2 {
+    margin: 0.5rem 0;
+}
+
+/* #project .item div { */
+.card {
+    background-color: #fff;
+    border: 1px solid rgba(187, 187, 187, 0.7);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    box-shadow: 0px 0 4px 2px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+.card img {
+    width: 90%;
+    border-radius: 0.5rem;
+}
+
+.card a {
+    background-color: royalblue;
+    color: white;
+    margin: 0.5rem;
+}
+
+.title {
+    margin-top: 1rem;
+}
+/* def class */
+
+/* layout */
 .container {
     width: 90%;
     max-width: 800px;
-    margin: 32px auto;
-    border-radius: 10px;
+    margin: 1.5rem auto;
+    border-radius: 1rem;
     background-color: white;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
 }
 
+/* header */
 header {
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: white;
     display: flex;
-    padding: 20px;
+    padding: 1.4rem;
     align-items: center;
     justify-content: space-between;
 }
 
-header .nav {
+.nav {
     display: flex;
     align-items: center;
 }
 
-header .nav .navbar li {
+.nav .navbar li {
     list-style: none;
     display: inline-flex;
     text-transform: uppercase;
     padding: 0 4px;
 }
 
-header .nav .navbar li a:hover {
+.nav .navbar li a:hover {
     color: orange;
 }
 
-header .nav .botbar {
+.nav .botbar {
     display: none;
 }
 
-header .nav .botbar a {
+.nav .botbar a {
     display: flex;
     padding: 10px 16px;
     border-radius: 4px;
 }
 
-header .nav .botbar a:hover {
+.nav .botbar a:hover {
     background-color: orange;
 }
 
@@ -87,10 +170,7 @@ header .email a:hover {
     background-color: orange;
     cursor: pointer;
 }
-
-.active {
-    color: orangered;
-}
+/* header */
 
 main {
     padding-bottom: 32px;
@@ -98,6 +178,7 @@ main {
     flex-direction: column;
 }
 
+/* home */
 #home .intro {
     display: flex;
     justify-content: space-between;
@@ -106,7 +187,7 @@ main {
     border-bottom-right-radius: 10px; */
     background-color: #eee;
     align-items: center;
-    padding: 5%;
+    padding: 3rem;
 }
 
 .intro h1 {
@@ -119,80 +200,52 @@ main {
     max-width: 200px;
 }
 
-.jr {
-    text-align: right;
-}
-
-.small {
-    font-size: 0.8em;
-}
-
-.intro button {
+.intro .btn {
+    display: inline-block;
     background-color: orangered;
     color: white;
-    padding: 6px 12px;
-    margin: 8px 0;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
 }
+/* home */
 
+/* project */
 #project {
-    padding: 16px;
     display: flex;
     flex-direction: column;
 }
 
-#project h1 {
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-#project .item {
-    padding-top: 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background-color: #eee;
-    border-radius: 10px;
-}
-
-#project .item div {
-    /* box-shadow: 0px 0 4px 1px rgba(0, 0, 0, 0.3); */
-    padding: 8px;
-    border-radius: 8px;
+#project .card {
     min-width: 320px;
     width: 30%;
+}
+/* project */
+
+/* skill */
+#skill {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 5%;
 }
 
-#project .item div:hover {
-    box-shadow: 0px 0 4px 2px rgba(0, 0, 0, 0.3);
-    background-color: white;
+#skill .item {
+    justify-content: center;
 }
 
-#project .item h2 {
-    margin: 4px 0;
+#skill .card {
+    min-width: 120px;
+    width: 20%;
+    margin: 1rem;
 }
+/* layout */
 
-#project .item img {
-    width: 90%;
-    border-radius: 8px;
-}
-
-#project .item div a {
-    background-color:royalblue;
-    color: white;
-    margin: 8px;
-}
-@media(max-width: 720px) {
+/* media */
+@media (max-width: 720px) {
     .container {
-        margin-top: 16px;
-        margin-bottom: 96px;
+        margin: 0;
+        padding-bottom: 5rem;
+        border-radius: 0;
+        width: 100%;
     }
 
     .navbar {
@@ -204,13 +257,14 @@ main {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        left: 0; bottom: 0;
+        left: 0;
+        bottom: 0;
         background-color: white;
         width: 96%;
-        margin-left: 2%;
-        margin-bottom: 2%;
-        padding: 10px;
-        border-radius: 10px;
+        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
     }
 
@@ -220,7 +274,7 @@ main {
     }
 
     #home .intro img {
-        margin: 8px 0;
+        margin: 0.4rem 0;
     }
 
     #project .item {
@@ -232,16 +286,11 @@ main {
         min-width: 120px;
         width: 90%;
         max-width: 480px;
-        margin-bottom: 10%;
-    }
-
-    #project h1 {
-        text-align: left;
-        margin: 2%;
+        margin-bottom: 1.5rem;
     }
 
     #project .item img {
-        margin: 2% 0;
+        margin: 0.4rem 0;
     }
-
 }
+/* media */
