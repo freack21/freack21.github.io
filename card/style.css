@@ -4,16 +4,23 @@
 
 * {
     margin: 0;
-    color:teal;
-    font-family: 'Rubik', sans-serif;
+    color: teal;
+    font-family: "Rubik", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding: 8px 0;
 }
 
-h3, h4, h5 {
+h3,
+h4,
+h5 {
     padding: 4px 0;
+}
+
+body {
+    background-color: darkcyan;
 }
 
 .container {
@@ -28,9 +35,9 @@ h3, h4, h5 {
 .card {
     width: 360px;
     max-width: 90%;
-    height:480px;
+    height: 480px;
     background-color: powderblue;
-    border-radius: 16px;
+    border-radius: 1rem;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -49,7 +56,21 @@ audio {
     display: none;
 }
 
-#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11,#c12,#c13,#c14,#c15 {
+#c1,
+#c2,
+#c3,
+#c4,
+#c5,
+#c6,
+#c7,
+#c8,
+#c9,
+#c10,
+#c11,
+#c12,
+#c13,
+#c14,
+#c15 {
     text-align: center;
     display: none;
 }

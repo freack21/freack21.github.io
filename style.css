@@ -10,6 +10,13 @@ h2 {
     margin: 0.2rem 0;
 }
 
+iframe {
+    border-radius: 0.6rem;
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+}
+
 body {
     background-color: #ddd;
 }
@@ -85,7 +92,7 @@ code {
     background-color: #fff;
     border: 1px solid rgba(187, 187, 187, 0.7);
     padding: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,8 +102,7 @@ code {
 }
 
 .card:hover {
-    box-shadow: 0px 0 4px 2px rgba(0, 0, 0, 0.3);
-    background-color: white;
+    box-shadow: 0px 0 4px 1px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
@@ -161,9 +167,9 @@ header {
     border-radius: 0.2rem;
 }
 
-.nav .botbar a:hover {
+/* .nav .botbar a:hover {
     background-color: #ddd;
-}
+} */
 
 header .email a {
     padding: 0.9rem 1rem;
@@ -220,6 +226,7 @@ main {
 #project .card {
     min-width: 320px;
     width: 30%;
+    padding: 0 0 0.5rem 0;
 }
 /* project */
 
@@ -242,7 +249,7 @@ main {
     min-width: 120px;
     width: 20%;
     margin: 1rem;
-    padding: 0.5rem 0.2rem;
+    padding: 0.4rem;
     border: none;
 }
 
@@ -258,21 +265,25 @@ main {
     flex-flow: column wrap;
     align-items: center;
     align-content: center;
-    background-color: #eee;
 }
 
 .json-me {
     margin: 1rem 0;
     font-size: 1rem;
-    padding: 0.5rem 2rem;
     /* background-color: #eee; */
     /* border-radius: 1rem; */
-    /* border: 1px solid #aaa; */
+    /* border: 1px solid orangered; */
+    box-shadow: 0 0 5px 2px rgba(255, 68, 0, 0.514);
 }
 
 .json-me p {
     padding: 0.3rem;
-    background-color: #f9f9f9;
+    background-color: orangered;
+    color: white;
+}
+
+.json-me pre {
+    padding: 0.2rem 1rem;
 }
 /* about */
 /* layout */
