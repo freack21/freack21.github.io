@@ -27,26 +27,30 @@
                 <div class="nav">
                     <h1>F21.</h1>
                     <ul class="navbar">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#project">Project</a></li>
-                        <li><a href="#skill">Skill</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <a href="#home" class="active nav-link">Home</a>
+                        </li>
+                        <li><a href="#project" class="nav-link">Project</a></li>
+                        <li><a href="#skill" class="nav-link">Skill</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
 
                     <!-- mobile nav -->
                     <div class="botbar">
-                        <a href="#home" class="active"
+                        <a href="#home" class="active nav-link"
                             ><i class="fa-solid fa-house"></i
                         ></a>
-                        <a href="#project"
+                        <a href="#project" class="nav-link"
                             ><i class="fa-solid fa-diagram-project"></i
                         ></a>
-                        <a href="#skill"
+                        <a href="#skill" class="nav-link"
                             ><i class="fa-solid fa-rectangle-list"></i
                         ></a>
-                        <a href="#about"><i class="fa-solid fa-user"></i></a>
-                        <a href="#contact"
+                        <a href="#about" class="nav-link"
+                            ><i class="fa-solid fa-user"></i
+                        ></a>
+                        <a href="#contact" class="nav-link"
                             ><i class="fa-solid fa-message"></i
                         ></a>
                     </div>
@@ -63,6 +67,8 @@
                 <!-- email -->
             </header>
             <!-- header -->
+
+            <hr />
 
             <!-- main -->
             <main>
@@ -83,10 +89,21 @@
                                 >Message Me!</a
                             >
                         </div>
-                        <img src="ava.jpg" alt="Avatar" />
+                        <!-- <img src="ava.jpg" alt="Avatar" /> -->
+                        <a
+                            href="http://www.linkedin.com/in/fikrivandi/"
+                            target="_blank"
+                        >
+                            <img
+                                src="https://media.licdn.com/dms/image/D5635AQElCBEq7zrjfQ/profile-framedphoto-shrink_200_200/0/1668407813621?e=1675008000&v=beta&t=ZWGVtV8G5ZsXB9jtKY7fDcAjn-XleA7clueYApdq7Sk"
+                                alt="Avatar"
+                            />
+                        </a>
                     </div>
                 </div>
                 <!-- home -->
+
+                <hr />
 
                 <!-- project -->
                 <div id="project">
@@ -124,35 +141,81 @@
 
                 <!-- skill -->
                 <div id="skill">
-                    <h1 class="tcenter title">My Skill</h1>
+                    <h1 class="tcenter title">My Skills</h1>
                     <div class="item">
                         <div class="card">
-                            <img src="/card/s1.png" alt="HTML" />
+                            <!-- https://cdn-icons-png.flaticon.com/512/121/121537.png -->
+                            <!-- https://cdn-icons-png.flaticon.com/512/142/142397.png -->
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/143/143655.png"
+                                alt="HTML"
+                            />
                             <h4>HTML</h4>
                         </div>
                         <div class="card">
-                            <img src="/card/s2.png" alt="JS" />
+                            <!-- https://cdn-icons-png.flaticon.com/512/721/721671.png -->
+                            <!-- https://cdn-icons-png.flaticon.com/512/721/721791.png -->
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+                                alt="JS"
+                            />
                             <h4>JavaScript</h4>
                         </div>
                         <div class="card">
-                            <img src="/card/s3.png" alt="CSS" />
+                            <!-- https://cdn-icons-png.flaticon.com/512/732/732007.png -->
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+                                alt="CSS"
+                            />
                             <h4>CSS</h4>
                         </div>
                         <div class="card">
-                            <img src="/card/s4.png" alt="C#" />
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png"
+                                alt="C#"
+                            />
                             <h4>C#</h4>
                         </div>
                         <div class="card">
-                            <img src="/backup/s4.png" alt="" />
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+                                alt=""
+                            />
                             <h4>C/C++</h4>
                         </div>
                         <div class="card">
-                            <img src="/card/s5.png" alt="Java" />
-                            <h4>Java 2 Micro Edition (J2ME)</h4>
+                            <!-- https://cdn-icons-png.flaticon.com/512/226/226777.png -->
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+                                alt="Java"
+                            />
+                            <h4>Java Micro Edition (J2ME)</h4>
                         </div>
                     </div>
                 </div>
                 <!-- skill -->
+
+                <hr />
+
+                <!-- about -->
+                <div id="about">
+                    <h1 class="tcenter title">About Me</h1>
+                    <div class="json-me">
+                        <p class="tcenter">me.json</p>
+                        <pre>
+                            <code>
+"Fikri Rivandi": {
+    "Nickname": "Freeact",
+    "Gender": "Male",
+    "Age": 19,
+    "Hobby": "Coding and Gaming",
+    "Country": "ID-id, Indonesia"
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- about -->
             </main>
             <!-- main -->
         </div>

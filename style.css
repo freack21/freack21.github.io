@@ -7,7 +7,7 @@
 
 h1,
 h2 {
-    margin: 4px 0;
+    margin: 0.2rem 0;
 }
 
 body {
@@ -37,6 +37,10 @@ button:hover,
 
 hr {
     border: 0.5px solid rgba(216, 209, 209, 0.7);
+}
+
+code {
+    font-family: monospace;
 }
 /* element */
 
@@ -107,7 +111,7 @@ hr {
 }
 
 .title {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 /* def class */
 
@@ -126,7 +130,7 @@ header {
     border-radius: 1rem;
     background-color: white;
     display: flex;
-    padding: 1.4rem;
+    padding: 1rem 1.4rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -153,8 +157,8 @@ header {
 
 .nav .botbar a {
     display: flex;
-    padding: 10px 16px;
-    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    border-radius: 0.2rem;
 }
 
 .nav .botbar a:hover {
@@ -162,7 +166,7 @@ header {
 }
 
 header .email a {
-    padding: 14px 16px;
+    padding: 0.9rem 1rem;
     border-radius: 50%;
 }
 
@@ -173,7 +177,7 @@ header .email a:hover {
 /* header */
 
 main {
-    padding-bottom: 32px;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -182,10 +186,7 @@ main {
 #home .intro {
     display: flex;
     justify-content: space-between;
-    /* border-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; */
-    background-color: #eee;
+    background-color: #f9f9f9;
     align-items: center;
     padding: 3rem;
 }
@@ -197,6 +198,7 @@ main {
 .intro img {
     width: 50%;
     border-radius: 50%;
+    min-width: 160px;
     max-width: 200px;
 }
 
@@ -204,7 +206,7 @@ main {
     display: inline-block;
     background-color: orangered;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     margin: 0.5rem 0;
 }
 /* home */
@@ -232,15 +234,50 @@ main {
     justify-content: center;
 }
 
+.hs0:hover {
+    box-shadow: none;
+}
+
 #skill .card {
     min-width: 120px;
     width: 20%;
     margin: 1rem;
+    padding: 0.5rem 0.2rem;
     border: none;
 }
+
+#skill .card img {
+    width: 75%;
+    margin: 0.5rem;
+}
+/* skill */
+
+/* about */
+#about {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    background-color: #eee;
+}
+
+.json-me {
+    margin: 1rem 0;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    /* background-color: #eee; */
+    /* border-radius: 1rem; */
+    /* border: 1px solid #aaa; */
+}
+
+.json-me p {
+    padding: 0.3rem;
+    background-color: #f9f9f9;
+}
+/* about */
 /* layout */
 
-/* media */
+/* media query */
 @media (max-width: 720px) {
     .container {
         margin: 0;
@@ -292,6 +329,12 @@ main {
 
     #project .item img {
         margin: 0.4rem 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .json-me {
+        font-size: 0.8rem;
     }
 }
 /* media */
