@@ -158,7 +158,7 @@ header {
 }
 
 .nav .botbar a:hover {
-    background-color: orange;
+    background-color: #ddd;
 }
 
 header .email a {
@@ -236,6 +236,7 @@ main {
     min-width: 120px;
     width: 20%;
     margin: 1rem;
+    border: none;
 }
 /* layout */
 
@@ -243,7 +244,7 @@ main {
 @media (max-width: 720px) {
     .container {
         margin: 0;
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
         border-radius: 0;
         width: 100%;
     }
