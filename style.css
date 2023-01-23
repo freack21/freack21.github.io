@@ -26,6 +26,29 @@ a {
     color: inherit;
 }
 
+label {
+    display: block;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+}
+
+input {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.2rem 0;
+    outline: none;
+    border: 1px solid #999;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 0.2rem;
+}
+
 button,
 .btn {
     border-radius: 0.2rem;
@@ -61,7 +84,8 @@ code {
 }
 
 .bg-primary {
-    color: orangered;
+    background-color: orangered;
+    color: white;
 }
 
 .jr {
@@ -95,7 +119,7 @@ code {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     align-items: center;
     margin-bottom: 2rem;
@@ -114,6 +138,10 @@ code {
     background-color: royalblue;
     color: white;
     margin: 0.5rem;
+}
+
+.card p {
+    padding: 0.1rem 0.5rem;
 }
 
 .title {
@@ -226,7 +254,7 @@ main {
 #project .card {
     min-width: 320px;
     width: 30%;
-    padding: 0 0 0.5rem 0;
+    padding: 0.5rem;
 }
 /* project */
 
@@ -265,6 +293,7 @@ main {
     flex-flow: column wrap;
     align-items: center;
     align-content: center;
+    margin-bottom: 2rem;
 }
 
 .json-me {
@@ -286,6 +315,45 @@ main {
     padding: 0.2rem 1rem;
 }
 /* about */
+
+/* contact */
+#contact {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contact-me {
+    margin-top: 0.5rem;
+    width: 80%;
+}
+
+.contact-me input {
+    padding: 0.4rem;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.6rem;
+}
+
+.contact-me input:focus {
+    border-bottom: 1px solid #333;
+}
+
+.contact-me textarea {
+    border: 1px solid #aaa;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin: 0.5rem 0;
+}
+
+.contact-me .btn {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+}
+/* contact */
 /* layout */
 
 /* media query */

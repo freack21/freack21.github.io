@@ -60,7 +60,11 @@
 
                 <!-- email -->
                 <div class="email">
-                    <a href="#email">
+                    <a
+                        href="mailto:fixri2104@gmail.com"
+                        target="_blank"
+                        title="Send me an Email"
+                    >
                         <i class="fa-regular fa-envelope"></i>
                     </a>
                 </div>
@@ -86,7 +90,8 @@
                                 id="msgme"
                                 href="http://wa.me/6282286230830?text=Hi,%20Fikri!"
                                 target="_blank"
-                                >Message Me!</a
+                                ><i class="fa-brands fa-whatsapp"></i> Message
+                                Me!</a
                             >
                         </div>
                         <!-- <img src="ava.jpg" alt="Avatar" /> -->
@@ -97,6 +102,7 @@
                             <img
                                 src="https://media.licdn.com/dms/image/D5635AQElCBEq7zrjfQ/profile-framedphoto-shrink_200_200/0/1668407813621?e=1675008000&v=beta&t=ZWGVtV8G5ZsXB9jtKY7fDcAjn-XleA7clueYApdq7Sk"
                                 alt="Avatar"
+                                title="Visit My LinkedIn"
                             />
                         </a>
                     </div>
@@ -110,7 +116,7 @@
                     <h1 class="tcenter title">My Projects</h1>
                     <div class="item">
                         <div class="card">
-                            <iframe src="/todoapp/" frameborder="0"></iframe>
+                            <!-- <iframe src="/todoapp/" frameborder="0"></iframe> -->
                             <h2>TodoApp</h2>
                             <p>Activity scheduler app.</p>
                             <p class="small"><em>(HTML, CSS, JS, VueJS)</em></p>
@@ -122,7 +128,7 @@
                             >
                         </div>
                         <div class="card">
-                            <iframe src="/card/" frameborder="0"></iframe>
+                            <!-- <iframe src="/card/" frameborder="0"></iframe> -->
                             <h2>Greeting Card</h2>
                             <p>
                                 Greeting cards for birthdays, graduations, and
@@ -216,6 +222,48 @@
                     </div>
                 </div>
                 <!-- about -->
+
+                <hr />
+
+                <!-- contact -->
+                <div id="contact">
+                    <h1 class="tcenter title">Contact</h1>
+                    <div class="contact-me">
+                        <form
+                            action="https://docs.google.com/forms/d/e/1FAIpQLSdxZw6nf2JHA88jsymSCZruKVL4Er-mThI1eihwvb_IqVG8Og/formResponse"
+                            method="post"
+                            target="_blank"
+                        >
+                            <label for="name">Name</label>
+                            <!-- name="1131113894.1994119487" -->
+                            <input
+                                type="text"
+                                name="entry.1131113894"
+                                id="name"
+                                required
+                            />
+                            <label for="email">Email</label>
+                            <!-- name="404817156.1346787723" -->
+                            <input
+                                type="text"
+                                name="entry.404817156"
+                                id="email"
+                            />
+                            <label for="message">Message</label>
+                            <!-- name="1425903657.1561770317" -->
+                            <textarea
+                                name="entry.1425903657"
+                                id="message"
+                                rows="3"
+                                required
+                            ></textarea>
+                            <button type="submit" class="btn bg-primary">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- contact -->
             </main>
             <!-- main -->
         </div>
