@@ -54,7 +54,7 @@ textarea {
 button,
 .btn {
     outline: none;
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0.3rem 0.6rem;
     background-color: white;
@@ -71,7 +71,7 @@ button:focus,
 }
 
 hr {
-    border: 0.12rem solid #ccc;
+    border: 1px solid #ccc;
 }
 
 code {
@@ -357,20 +357,22 @@ main {
 #notif {
     width: 100%;
     text-align: center;
-    /* background-color: rgba(255, 0, 0, 0.8); */
+    display: none;
+    /* background-color: rgba(255, 0, 0, 0.7); */
     /* background-color: rgba(0, 128, 0, 0.8); */
     /* box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3); */
+    /* border-radius: 1rem; */
     font-size: 0.9rem;
+    margin: 0.6rem 0;
     color: white;
     text-transform: uppercase;
     padding: 0.5rem;
-    display: none;
 }
 
 .contact-me .title,
 .my-contact .title {
     background-color: #f1f1f1;
-    border-radius: 0.5rem;
+    border-radius: 0.4rem;
     padding: 0.5rem;
 }
 
@@ -378,7 +380,7 @@ main {
     background-color: inherit;
     border: none;
     border-bottom: 1px solid #aaa;
-    margin: 0.6rem 0 1rem 0;
+    margin: 1rem 0;
 }
 
 .contact-me input:focus,
@@ -401,7 +403,8 @@ main {
 .contact-me .btn {
     width: 100%;
     padding: 0.4rem 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    border-radius: 1rem;
 }
 
 .my-contact {
