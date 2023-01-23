@@ -228,42 +228,46 @@
                 <!-- contact -->
                 <div id="contact">
                     <h1 class="tcenter title">Contact</h1>
+                    <div class="my-contact"></div>
                     <div class="contact-me">
-                        <form
-                            action="https://docs.google.com/forms/d/e/1FAIpQLSdxZw6nf2JHA88jsymSCZruKVL4Er-mThI1eihwvb_IqVG8Og/formResponse"
-                            method="post"
-                            target="_blank"
-                        >
-                            <label for="name">Name</label>
-                            <!-- name="1131113894.1994119487" -->
+                        <div id="notif"></div>
+                        <form method="post" name="contact-form">
+                            <!-- <label for="name">Name</label> -->
                             <input
                                 type="text"
-                                name="entry.1131113894"
+                                name="NAMA"
                                 id="name"
                                 required
+                                placeholder="Name"
                             />
-                            <label for="email">Email</label>
-                            <!-- name="404817156.1346787723" -->
+                            <!-- <label for="email">Email</label> -->
                             <input
                                 type="text"
-                                name="entry.404817156"
+                                name="EMAIL"
                                 id="email"
+                                placeholder="abc@domain.com"
                             />
-                            <label for="message">Message</label>
-                            <!-- name="1425903657.1561770317" -->
                             <textarea
-                                name="entry.1425903657"
+                                oninput="auto_grow(this)"
+                                name="PESAN"
                                 id="message"
-                                rows="3"
+                                rows="1"
                                 required
+                                placeholder="Your message.."
                             ></textarea>
-                            <button type="submit" class="btn bg-primary">
+                            <button
+                                type="submit"
+                                class="btn bg-primary"
+                                id="send-btn"
+                            >
                                 Send
                             </button>
                         </form>
                     </div>
                 </div>
                 <!-- contact -->
+
+                <hr />
             </main>
             <!-- main -->
         </div>
