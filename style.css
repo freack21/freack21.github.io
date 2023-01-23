@@ -71,7 +71,7 @@ button:focus,
 }
 
 hr {
-    border: 0.1rem solid #ccc;
+    border: 0.12rem solid #ccc;
 }
 
 code {
@@ -159,6 +159,7 @@ code {
     width: 90%;
     max-width: 800px;
     margin: 1.5rem auto;
+    padding-bottom: 1rem;
     border-radius: 1rem;
     background-color: white;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
@@ -216,7 +217,7 @@ header .email a:hover {
 /* header */
 
 main {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -271,7 +272,7 @@ main {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 2.5rem;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
 }
 
 #skill .item {
@@ -283,17 +284,18 @@ main {
 }
 
 #skill .card:hover {
-    background-color: #fff;
+    box-shadow: none;
 }
 
 #skill .card {
     background-color: inherit;
-    min-width: 120px;
+    min-width: 100px;
     border-radius: 0.5rem;
-    width: 15%;
-    margin: 1rem;
-    padding: 0.6rem 0.4rem;
+    width: 14%;
+    max-width: 120px;
     border: none;
+    margin: 1.2rem;
+    padding: 0.6rem 0.4rem;
 }
 
 #skill .card img {
@@ -308,12 +310,17 @@ main {
     flex-flow: column wrap;
     align-items: center;
     align-content: center;
-    margin-bottom: 2.3rem;
+    padding-bottom: 2.3rem;
 }
 
 .json-me {
     margin: 1.3rem 0;
     font-size: 1rem;
+    border: 1px solid #ccc;
+}
+
+.json-me:hover {
+    border-color: rgba(255, 68, 0, 0.3);
     box-shadow: 0 0 5px 2px rgba(255, 68, 0, 0.3);
 }
 
@@ -335,11 +342,10 @@ main {
     justify-content: flex-start;
     align-items: center;
     padding-bottom: 2.5rem;
-    background-color: #f5f5f5;
 }
 
 .contact-me {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     width: 80%;
 }
 
@@ -356,15 +362,22 @@ main {
     display: none;
 }
 
+.contact-me .title {
+    margin: 0.9rem;
+}
+
 .contact-me input {
     background-color: inherit;
     border: none;
     border-bottom: 1px solid #aaa;
-    margin: 1rem 0;
+    margin: 0.6rem 0 1rem 0;
 }
 
 .contact-me input:focus,
-.contact-me textarea:focus {
+.contact-me textarea:focus,
+.contact-me input:hover,
+.contact-me textarea:hover {
+    transition: 0.5s;
     border-bottom: 1px solid #333;
 }
 
@@ -382,14 +395,42 @@ main {
     padding: 0.4rem 1rem;
     font-size: 1rem;
 }
+
+.my-contact {
+    margin: 1.5rem 0;
+    width: 80%;
+}
+
+.my-contact div.item {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.my-contact .card {
+    margin: 0.2rem;
+    padding: 0.8rem;
+    font-size: 2.2rem;
+    justify-content: center;
+    align-items: center;
+}
 /* contact */
+
+/* footer */
+footer {
+    margin: 0.3rem 0;
+}
+
+footer span {
+    color: orangered;
+}
+/* footer */
 /* layout */
 
 /* media query */
 @media (max-width: 720px) {
     .container {
         margin: 0;
-        padding-bottom: 3rem;
+        padding-bottom: 5rem;
         border-radius: 0;
         width: 100%;
     }
@@ -443,6 +484,11 @@ main {
 @media (max-width: 400px) {
     .json-me {
         font-size: 0.8rem;
+    }
+
+    .my-contact div.item {
+        display: flex;
+        justify-content: center;
     }
 }
 /* media */

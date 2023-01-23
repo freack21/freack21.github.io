@@ -1,3 +1,14 @@
+const meJson = `
+"Fikri Rivandi": {
+    "Nickname": "Freeact",
+    "Gender": "Male",
+    "Age": 19,
+    "Hobby": "Coding and Gaming",
+    "Country": "ID-id, Indonesia"
+}
+`;
+document.querySelector("pre>code").innerText = meJson;
+
 function auto_grow(element) {
     element.style.height = "16px";
     element.style.height = element.scrollHeight + "px";
