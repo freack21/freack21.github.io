@@ -46,7 +46,6 @@ body {
 .txt {
     padding: 1rem;
     width: 100%;
-    /* text-align: center; */
 }
 
 .sticker {
@@ -74,11 +73,14 @@ audio {
 #c12,
 #c13,
 #c14,
-#c15 {
+#c15,
+#c-1,
+#c0,
+#c-2 {
     text-align: center;
     display: none;
 }
 
-#c1 {
+#c-2 {
     display: block;
 }

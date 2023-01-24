@@ -1,10 +1,26 @@
 let maxSlide = 13;
-let startSlide = 1;
-let curSlide = 1;
-const slideMover = setInterval(() => {
+let startSlide = -2;
+let curSlide = startSlide;
+let delay = 1500;
+let slideMover = setMover(delay, () => {
+    if (curSlide >= 0) {
+        delay = 5000;
+        clearInterval(slideMover);
+        slideMover = setMover(delay, move);
+    }
+    move();
+});
+
+function move() {
     curSlide++;
     moveSlide(curSlide);
-}, 5000);
+}
+
+function setMover(delay, callback) {
+    return setInterval(() => {
+        callback();
+    }, delay);
+}
 
 function moveSlide(cur) {
     if (cur >= maxSlide) clearInterval(slideMover);
