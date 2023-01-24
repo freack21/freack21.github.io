@@ -1,4 +1,4 @@
-let maxSlide = 13;
+let maxSlide = 10;
 let startSlide = -2;
 let curSlide = startSlide;
 let delay = 1500;
@@ -6,7 +6,14 @@ let slideMover = setMover(delay, () => {
     if (curSlide >= 0) {
         delay = 5000;
         clearInterval(slideMover);
-        slideMover = setMover(delay, move);
+        slideMover = setMover(delay, () => {
+            if (curSlide >= 9) {
+                delay = 10000;
+                clearInterval(slideMover);
+                slideMover = setMover(delay, move);
+            }
+            move();
+        });
     }
     move();
 });
