@@ -409,20 +409,24 @@ main {
 
 .my-contact {
     margin: 1.5rem 0;
+    margin-bottom: 0.5rem;
     width: 80%;
 }
 
 .my-contact div.item {
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 1rem;
 }
 
 .my-contact .card {
-    margin: 0.2rem;
-    padding: 0.8rem;
-    font-size: 2.2rem;
+    margin: 0.1rem;
+    font-size: 2rem;
     justify-content: center;
     align-items: center;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 /* contact */
 
