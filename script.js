@@ -7,7 +7,7 @@ const meJson = `
     "Country": "ID-id, Indonesia"
 }
 `;
-document.querySelector("pre>code").innerText = meJson;
+document.querySelector(".json-me code").innerText = meJson;
 
 function auto_grow(element) {
     element.style.height = "16px";
@@ -29,30 +29,34 @@ const scriptURL =
     "https://script.google.com/macros/s/AKfycbz0_l8FXu380-NJ1rjYUvS3bXvcZydePWRNhyR_8qzNQhTGCdg6et-6EFcA8RuLCj-49A/exec";
 const form = document.forms["contact-form"];
 const sendBtn = document.getElementById("send-btn");
-const notif = document.getElementById("notif");
+const defSendBtnText = sendBtn.innerHTML;
+// const notif = document.getElementById("notif");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     sendBtn.innerText = "Sending...";
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
         .then((response) => {
-            Notify("rgba(0, 128, 0, 0.7)", "Sent successfully!!");
+            Notify("rgba(0, 128, 0, 0.8)", "Sent successfully!!");
         })
         .catch((error) => {
-            Notify("rgba(255, 0, 0, 0.7)", "Failed to send message!!");
+            Notify("rgba(255, 0, 0, 0.8)", "Failed to send message!!");
         });
 });
 
 function Notify(color, msg) {
     form.reset();
-    notif.style.backgroundColor = color;
-    notif.innerText = msg;
-    notif.style.display = "block";
-    sendBtn.innerText = "Send";
+    sendBtn.style.backgroundColor = color;
+    sendBtn.innerText = msg;
 
-    if (notif.style.display == "block") {
-        setTimeout(() => {
-            notif.style.display = "none";
-        }, 5000);
-    }
+    // if (sendBtn.style.display == "block") {
+    //     setTimeout(() => {
+    //         sendBtn.innerText = "Send";
+    //         sendBtn.style.backgroundColor = "orangered";
+    //     }, 5000);
+    // }
+    setTimeout(() => {
+        sendBtn.innerHTML = defSendBtnText;
+        sendBtn.style.backgroundColor = "orangered";
+    }, 5000);
 }
