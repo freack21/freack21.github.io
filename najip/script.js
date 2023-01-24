@@ -4,6 +4,7 @@ let curSlide = startSlide;
 let delay = 1500;
 let slideMover = setMover(delay, () => {
     if (curSlide >= 0) {
+        document.getElementById("audio").play();
         delay = 5000;
         clearInterval(slideMover);
         slideMover = setMover(delay, () => {
