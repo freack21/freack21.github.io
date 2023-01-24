@@ -8,7 +8,7 @@ let slideMover = setMover(delay, () => {
         clearInterval(slideMover);
         slideMover = setMover(delay, () => {
             if (curSlide >= 9) {
-                delay = 20000;
+                delay = 10000;
                 clearInterval(slideMover);
                 slideMover = setMover(delay, move);
             }
