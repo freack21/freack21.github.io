@@ -24,14 +24,16 @@ function moveSlide(cur) {
     next ? (next.style.display = "block") : console.log("end");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (audio.readyState >= 3) {
-        audio.play();
-        console.log(audio.readyState);
-        slideMover = setMover(delay, () => {
-            if (curSlide >= 0) {
-                delay = 5000;
-                clearInterval(slideMover);
+document.getElementById("startBtn").addEventListener("click", function () {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("c-2").style.display = "block";
+    slideMover = setMover(delay, () => {
+        if (curSlide >= 0) {
+            delay = 5000;
+            clearInterval(slideMover);
+            if (audio.readyState >= 3) {
+                console.log(audio.readyState);
+                audio.play();
                 slideMover = setMover(delay, () => {
                     if (curSlide >= 9) {
                         delay = 10000;
@@ -40,8 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     move();
                 });
+            } else {
+                console.log(audio.readyState);
             }
-            move();
-        });
-    }
+        }
+        move();
+    });
 });

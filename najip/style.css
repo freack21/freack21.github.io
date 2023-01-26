@@ -81,6 +81,25 @@ audio {
     display: none;
 }
 
-#c-2 {
-    display: block;
+div#start {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#startBtn {
+    background-color: #fff;
+    padding: 0.4rem 1.4rem;
+    font-size: 1.5rem;
+    outline: none;
+    border-radius: 0.4rem;
+    color: black;
 }
