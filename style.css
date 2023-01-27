@@ -253,7 +253,7 @@ main {
 /* home */
 
 /* project */
-#project {
+#project .p-container {
     /* background-color: red; */
     display: flex;
     flex-direction: column;
@@ -274,7 +274,7 @@ main {
 /* project */
 
 /* skill */
-#skill {
+#skill .p-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,7 +314,7 @@ main {
 /* skill */
 
 /* about */
-#about {
+#about .p-container {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -348,7 +348,7 @@ main {
 /* about */
 
 /* contact */
-#contact {
+#contact .p-container {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
@@ -461,11 +461,16 @@ footer span:hover {
 
 /* media query */
 @media (max-width: 720px) {
+    body {
+        background-color: #fff;
+    }
+
     .container {
         margin: 0;
         padding-bottom: 5rem;
         border-radius: 0;
         width: 100%;
+        box-shadow: none;
     }
 
     .navbar {
@@ -525,6 +530,17 @@ footer span:hover {
 
     .my-contact div.item {
         display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    #skill .card {
+        width: 13%;
+        margin: 0.4rem 1rem;
+    }
+    #skill .item {
+        padding: 1rem;
         justify-content: center;
     }
 }

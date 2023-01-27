@@ -1,26 +1,22 @@
 const meJson = `
 "Fikri Rivandi": {
-    "Nickname": "Freeact",
+    "Nickname": ["Freack21", "Freeact"],
     "Gender": "Male",
-    "Age": 19,
-    "Hobby": "Coding and Gaming",
-    "Country": "ID-id, Indonesia"
+    "Status": "Student",
+    "Hobby": ["Coding", "Gaming"],
+    "Motto": "Don't Worry, Be Happy",
 }
 `;
 document.querySelector(".json-me code").innerText = meJson;
 
-function auto_grow(element) {
-    element.style.height = "16px";
-    element.style.height = element.scrollHeight + "px";
-}
-
 let nav = document.querySelectorAll(".nav-link");
-
 nav.forEach((n) => {
-    n.onclick = () => {
+    n.onclick = (e) => {
+        e.preventDefault();
         nav.forEach((l) => {
             l.classList.remove("active");
         });
+        changePage(n.getAttribute("href"));
         n.classList.add("active");
     };
 });
@@ -30,8 +26,6 @@ const scriptURL =
 const form = document.forms["contact-form"];
 const sendBtn = document.getElementById("send-btn");
 const defSendBtnText = sendBtn.innerHTML;
-// const notif = document.getElementById("notif");
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     sendBtn.innerText = "Sending...";
@@ -48,15 +42,23 @@ function Notify(color, msg) {
     form.reset();
     sendBtn.style.backgroundColor = color;
     sendBtn.innerText = msg;
-
-    // if (sendBtn.style.display == "block") {
-    //     setTimeout(() => {
-    //         sendBtn.innerText = "Send";
-    //         sendBtn.style.backgroundColor = "orangered";
-    //     }, 5000);
-    // }
     setTimeout(() => {
         sendBtn.innerHTML = defSendBtnText;
         sendBtn.style.backgroundColor = "orangered";
     }, 5000);
+}
+
+function auto_grow(element) {
+    element.style.height = "16px";
+    element.style.height = element.scrollHeight + "px";
+}
+
+function changePage(page) {
+    let pages = document.querySelectorAll(".page");
+    if (page == "#home") {
+        pages.forEach((l) => (l.style.display = "block"));
+        return;
+    }
+    pages.forEach((l) => (l.style.display = "none"));
+    document.querySelector(page).style.display = "block";
 }
