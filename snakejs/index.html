@@ -20,14 +20,35 @@
                 align-items: center;
             }
 
-            canvas {
-                width: 95%;
+            #game-over {
+                display: none;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+                text-align: center;
+            }
+
+            #restart {
+                padding: 0.3rem 1rem;
+                outline: none;
+                background-color: red;
+                color: white;
+                font-family: monospace;
+                font-size: 1rem;
+                border-radius: 1rem;
+            }
+
+            #restart:hover {
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <canvas id="snake-canvas"></canvas>
+            <canvas id="snake-canvas" width="600" height="400"></canvas>
+            <div id="game-over">
+                <h2>GAME OVER</h2>
+                <button id="restart">Play Again</button>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>

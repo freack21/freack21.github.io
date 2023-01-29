@@ -3,7 +3,6 @@ class Snake {
         this.x = x;
         this.y = y;
         this.size = size;
-        this.moved = true;
         this.body = [
             {
                 x,
@@ -68,7 +67,6 @@ class Snake {
 
         this.body.shift();
         this.body.push(newBody);
-        this.moved = true;
     }
 }
 
@@ -90,11 +88,12 @@ class Food {
 }
 
 const snakeCanvas = document.getElementById("snake-canvas");
+const gOver = document.getElementById("game-over");
 const g = snakeCanvas.getContext("2d");
 const width = snakeCanvas.width;
 const height = snakeCanvas.height;
-const snake = new Snake(width / 2, height / 2, width / 24);
-const food = new Food(width / 24);
+const snake = new Snake(width / 2, height / 2, 20);
+const food = new Food(20);
 let gameover = false;
 const fps = 10;
 
@@ -118,7 +117,6 @@ function paint() {
         gameover = true;
     }
     showScore();
-    keyControl();
     updateGame();
 }
 
@@ -129,6 +127,7 @@ function updateGame() {
         food.big = !food.big;
         food.count = 0;
     }
+    keyControl();
 }
 
 function showBg() {
@@ -140,13 +139,16 @@ function showBg() {
 function showScore() {
     g.beginPath();
     g.fillStyle = "#000";
-    g.fillText("Score : " + (snake.body.length - 1), 16, 16);
+    g.font = "1rem monospace";
+    g.fillText("Score : " + (snake.body.length - 1), 8, 16);
 }
 
 function showGo() {
-    g.beginPath();
-    g.fillStyle = "#000";
-    g.fillText("Game Over", width / 2, height / 2);
+    snakeCanvas.style.display = "none";
+    gOver.style.display = "block";
+    document.getElementById("restart").onclick = () => {
+        window.location.reload();
+    };
     clearInterval(gameLoop);
 }
 
@@ -203,40 +205,37 @@ function eatSnakeBody() {
 }
 
 function keyControl() {
-    if (snake.moved) {
-        window.addEventListener("keydown", function (e) {
-            this.setTimeout(() => {
-                // console.log(e.code);
-                if (e.keyCode == 39 || e.keyCode == 65) {
-                    //right
-                    if (snake.X != -1) {
-                        snake.X = 1;
-                        snake.Y = 0;
-                    }
+    window.addEventListener("keydown", function (e) {
+        this.setTimeout(() => {
+            // console.log(e.code);
+            if (e.keyCode == 39 || e.keyCode == 65) {
+                //right
+                if (snake.X != -1) {
+                    snake.X = 1;
+                    snake.Y = 0;
                 }
-                if (e.keyCode == 37 || e.keyCode == 83) {
-                    //left
-                    if (snake.X != 1) {
-                        snake.X = -1;
-                        snake.Y = 0;
-                    }
+            }
+            if (e.keyCode == 37 || e.keyCode == 83) {
+                //left
+                if (snake.X != 1) {
+                    snake.X = -1;
+                    snake.Y = 0;
                 }
-                if (e.keyCode == 38 || e.keyCode == 87) {
-                    //up
-                    if (snake.Y != 1) {
-                        snake.Y = -1;
-                        snake.X = 0;
-                    }
+            }
+            if (e.keyCode == 38 || e.keyCode == 87) {
+                //up
+                if (snake.Y != 1) {
+                    snake.Y = -1;
+                    snake.X = 0;
                 }
-                if (e.keyCode == 40 || e.keyCode == 68) {
-                    //down
-                    if (snake.Y != -1) {
-                        snake.Y = 1;
-                        snake.X = 0;
-                    }
+            }
+            if (e.keyCode == 40 || e.keyCode == 68) {
+                //down
+                if (snake.Y != -1) {
+                    snake.Y = 1;
+                    snake.X = 0;
                 }
-                snake.moved = false;
-            }, 1);
-        });
-    }
+            }
+        }, 1);
+    });
 }
