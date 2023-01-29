@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: "Rubik", sans-serif;
-    color: #fff;
+    color: #000;
     box-sizing: border-box;
 }
 
@@ -29,7 +29,7 @@ hr {
 
 .container {
     padding: 1rem;
-    background-color: #2a9134;
+    background-color: #fff;
     /* background-image: url("https://img.freepik.com/free-photo/white-painted-wall-texture-background_53876-138197.jpg?w=826&t=st=1674977370~exp=1674977970~hmac=859e5ea7fa8844fbad229efb533b5714ccec00a5db03e532d082ed19b1de3739"); */
     /* background-image: url("https://img.freepik.com/free-vector/background-wave-abstract-gradient-style_483537-2944.jpg?w=900&t=st=1674977338~exp=1674977938~hmac=48c4b2bc99eb1948ff565044f3a6129338e733aae6f5e4fe8a0f53a0605fba83"); */
     /* background-image: url("https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830026.jpg?w=826&t=st=1674977126~exp=1674977726~hmac=40d51696638ddfe42bb0116392d77359aef3c86ea33cede08b3bd6c208183f79"); */
@@ -43,7 +43,7 @@ hr {
 .titles {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .header {
@@ -59,7 +59,7 @@ hr {
 }
 
 span {
-    color: #fff;
+    color: orangered;
 }
 
 .tagline {
@@ -99,9 +99,10 @@ span {
     /* box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3); */
 }
 
-.headline h2 {
+.headline h2,
+.faktor h2 {
     width: fit-content;
-    color: #137547;
+    color: orangered;
     background-color: #fff;
     padding: 0.3rem 2rem;
 }
@@ -123,10 +124,9 @@ span {
     margin-bottom: 0.5rem;
 }
 
-.faktor h3,
-.faktor h2 {
-    color: #137547;
-    background-color: #fff;
+.faktor h3 {
+    color: chocolate;
+    background-color: #eee;
     padding: 0.5rem 1rem;
     text-align: center;
 }
