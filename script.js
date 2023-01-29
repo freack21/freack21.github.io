@@ -40,16 +40,18 @@ form.addEventListener("submit", (e) => {
 
 function Notify(color, msg) {
     form.reset();
+    sendBtn.disabled = true;
     sendBtn.style.backgroundColor = color;
     sendBtn.innerText = msg;
     setTimeout(() => {
+        sendBtn.disabled = false;
         sendBtn.innerHTML = defSendBtnText;
         sendBtn.style.backgroundColor = "orangered";
     }, 5000);
 }
 
 function auto_grow(element) {
-    element.style.height = "16px";
+    element.style.height = "1rem";
     element.style.height = element.scrollHeight + "px";
 }
 
