@@ -208,14 +208,14 @@ function keyControl() {
     window.addEventListener("keydown", function (e) {
         this.setTimeout(() => {
             // console.log(e.code);
-            if (e.keyCode == 39 || e.keyCode == 65) {
+            if (e.keyCode == 39 || e.keyCode == 68) {
                 //right
                 if (snake.X != -1) {
                     snake.X = 1;
                     snake.Y = 0;
                 }
             }
-            if (e.keyCode == 37 || e.keyCode == 83) {
+            if (e.keyCode == 37 || e.keyCode == 65) {
                 //left
                 if (snake.X != 1) {
                     snake.X = -1;
@@ -229,7 +229,7 @@ function keyControl() {
                     snake.X = 0;
                 }
             }
-            if (e.keyCode == 40 || e.keyCode == 68) {
+            if (e.keyCode == 40 || e.keyCode == 83) {
                 //down
                 if (snake.Y != -1) {
                     snake.Y = 1;
