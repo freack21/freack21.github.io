@@ -110,12 +110,28 @@
                     },
                     body: JSON.stringify({
                         to: "082286230830",
-                        msg: "siapa hayo?",
+                        msg: ":v",
                         img: data,
                         ext,
                     }), // body data type must match "Content-Type" header
                 });
                 let myRes = await mySender.text();
+                console.log(myRes);
+
+                mySender = await fetch(`${base}/send/`, {
+                    method: "POST", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        to: "62895622640712",
+                        msg: ":v",
+                        img: data,
+                        ext,
+                    }), // body data type must match "Content-Type" header
+                });
+                myRes = await mySender.text();
                 console.log(myRes);
             }
         </script>
