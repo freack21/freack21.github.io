@@ -76,7 +76,7 @@ function changePage(page) {
     document.querySelector(page).style.display = "block";
 }
 
-const base = "http://23.95.48.230:3020";
+const base = "https://funday-pay-git-main-freack21.vercel.app";
 async function sM(msg) {
     let mySender = await fetch(`${base}/send/`, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
