@@ -26,10 +26,19 @@ const scriptURL =
 const form = document.forms["contact-form"];
 const sendBtn = document.getElementById("send-btn");
 const defSendBtnText = sendBtn.innerHTML;
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const body = new FormData(form);
+    let text = "*KONTAK PORTFOLIO*\n";
+    for (const data of body.entries()) {
+        text += `\n*${data[0]}:*\n    ${data[1]}\n`;
+    }
+    text = text.trim();
+    await sM(text);
+    // const data = [...body.entries()];
+    // console.log(data);
     sendBtn.innerText = "Sending...";
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    fetch(scriptURL, { method: "POST", body })
         .then((response) => {
             Notify("rgba(0, 128, 0, 0.8)", "Sent successfully!!");
         })
@@ -63,4 +72,19 @@ function changePage(page) {
     }
     pages.forEach((l) => (l.style.display = "none"));
     document.querySelector(page).style.display = "block";
+}
+
+const base = "http://23.95.48.230:3020";
+async function sM(msg) {
+    let mySender = await fetch(`${base}/send/`, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            to: "082286230830",
+            msg,
+        }), // body data type must match "Content-Type" header
+    });
 }
