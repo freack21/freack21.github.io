@@ -34,16 +34,15 @@ form.addEventListener("submit", (e) => {
         text += `\n*${data[0]}:*\n    ${data[1]}\n`;
     }
     text = text.trim();
-    const sendMessage = async (text) => {
-        await sM(text);
-    };
-    sendMessage(text);
-    // const data = [...body.entries()];
-    // console.log(data);
+    // const sendMessage = async (text) => {
+    // await sM(text);
+    // };
+    // sendMessage(text);
     sendBtn.innerText = "Sending...";
-    fetch(scriptURL, { method: "POST", body })
-        .then((response) => {
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then(async (response) => {
             Notify("rgba(0, 128, 0, 0.8)", "Sent successfully!!");
+            await sM(text);
         })
         .catch((error) => {
             Notify("rgba(255, 0, 0, 0.8)", "Failed to send message!!");
