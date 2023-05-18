@@ -26,7 +26,7 @@ const scriptURL =
 const form = document.forms["contact-form"];
 const sendBtn = document.getElementById("send-btn");
 const defSendBtnText = sendBtn.innerHTML;
-form.addEventListener("submit", async (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
     const body = new FormData(form);
     let text = "*KONTAK PORTFOLIO*\n";
@@ -34,7 +34,10 @@ form.addEventListener("submit", async (e) => {
         text += `\n*${data[0]}:*\n    ${data[1]}\n`;
     }
     text = text.trim();
-    await sM(text);
+    const sendMessage = async (text) => {
+        await sM(text);
+    };
+    sendMessage(text);
     // const data = [...body.entries()];
     // console.log(data);
     sendBtn.innerText = "Sending...";
