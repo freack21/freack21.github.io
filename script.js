@@ -34,10 +34,10 @@ form.addEventListener("submit", (e) => {
         text += `\n*${data[0]}:*\n    ${data[1]}\n`;
     }
     text = text.trim();
-    // const sendMessage = async (text) => {
-    // await sM(text);
-    // };
-    // sendMessage(text);
+    const sendMessage = async (text) => {
+        await sM(text);
+    };
+    sendMessage(text);
     sendBtn.innerText = "Sending...";
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
         .then(async (response) => {
