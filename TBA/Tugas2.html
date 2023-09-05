@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tugas 2 | TBA</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana,
+                    sans-serif;
+            }
+
+            input,
+            label {
+                display: block;
+                width: 100%;
+            }
+
+            body {
+                background-color: #efefef;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .container {
+                background-color: white;
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            label {
+                font-size: 0.8rem;
+                margin-bottom: 0.2rem;
+            }
+
+            input {
+                padding: 0.3rem 0.6rem;
+                outline: none;
+                border: 1px solid #aaa;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h4 style="margin-bottom: 1.5rem">
+                    Hidupkan <span style="color: orange">Lampu</span> dengan
+                    Formula <span style="color: red">Rahasia</span> !
+                </h4>
+            </div>
+            <img
+                src="bulboff.png"
+                alt=""
+                width="72px"
+                height="72px"
+                id="hasil"
+            />
+            <div style="width: 80%">
+                <label for="inputUser">Formula</label>
+                <input type="text" name="inputUser" id="inputUser" />
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 0.4rem">
+                <span style="color: red">[BANTUAN]</span> 3 huruf pertama dalam
+                alfabet
+            </p>
+        </div>
+
+        <script>
+            const inputUser = document.getElementById("inputUser");
+            const hasilImg = document.getElementById("hasil");
+
+            inputUser.oninput = cekKata;
+
+            function cekKata() {
+                const kata = inputUser.value;
+                if (kata == "abc") {
+                    hasilImg.src = "bulbon.png";
+                } else {
+                    hasilImg.src = "bulboff.png";
+                }
+            }
+        </script>
+    </body>
+</html>
