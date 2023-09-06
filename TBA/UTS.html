@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UTS | TBA</title>
+        <style>
+            * {
+                font-family: "Poppins", sans-serif;
+            }
+            input,
+            button {
+                display: block;
+                outline: none;
+            }
+
+            input {
+                padding: 0.4rem 1rem;
+                border-radius: 2rem;
+                border: 1px solid #999;
+                margin: 1rem;
+                width: 90%;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body
+        style="
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        "
+    >
+        <div
+            style="
+                padding: 1rem;
+                border-radius: 0.5rem;
+                background-color: white;
+                box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
+            "
+        >
+            <h4
+                style="
+                    padding: 0.8rem 1rem;
+                    background-color: #ddd;
+                    border-radius: 0.7rem;
+                    margin-top: 0.5rem;
+                "
+            >
+                Scanner <span style="color: orangered">Nama</span> dan
+                <span style="color: orangered">NIM</span>
+                Mahasiswa
+            </h4>
+            <input type="text" id="nama" placeholder="Nama" />
+            <input type="text" id="nim" placeholder="NIM" />
+            <button id="cari">Cari</button>
+            <p id="hasil"></p>
+            <p id="hasil2"></p>
+        </div>
+        <script>
+            const namaInput = document.querySelector("#nama");
+            const nimInput = document.querySelector("#nim");
+            const hasilInput = document.querySelector("#hasil");
+            const hasilInput2 = document.querySelector("#hasil2");
+            const cariButton = document.querySelector("#cari");
+
+            cariButton.onclick = async (e) => {
+                hasilInput2.innerHTML = "";
+                const nama = namaInput.value;
+                const nim = nimInput.value;
+                const value = nama || nim;
+                if (!value || !value.length) return;
+                let hasil = "";
+                const sleep = (delay) =>
+                    new Promise((resolve) => setTimeout(resolve, delay));
+                for (let i = 0; i < value.length; i++) {
+                    for (let j = 20; j <= value.charCodeAt(i); j++) {
+                        hasil = hasil + String.fromCharCode(j);
+                        hasilInput.innerHTML = hasil;
+                        await sleep(30);
+                        if (j != value.charCodeAt(i))
+                            hasil = hasil.slice(0, hasil.length - 1);
+                    }
+                }
+                hasilInput2.innerHTML = "BERHASIL!";
+            };
+        </script>
+    </body>
+</html>
