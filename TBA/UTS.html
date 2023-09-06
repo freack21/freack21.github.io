@@ -12,9 +12,6 @@
             button {
                 display: block;
                 outline: none;
-            }
-
-            input {
                 padding: 0.4rem 1rem;
                 border-radius: 2rem;
                 border: 1px solid #999;
@@ -55,8 +52,18 @@
             </h4>
             <input type="text" id="nama" placeholder="Nama" />
             <input type="text" id="nim" placeholder="NIM" />
-            <button id="cari">Cari</button>
-            <p id="hasil"></p>
+            <button
+                id="cari"
+                style="
+                    cursor: pointer;
+                    background-color: orangered;
+                    color: white;
+                    border: 1px solid white;
+                "
+            >
+                Cari
+            </button>
+            <p id="hasil" style="border: 1px solid #555"></p>
             <p id="hasil2"></p>
         </div>
         <script>

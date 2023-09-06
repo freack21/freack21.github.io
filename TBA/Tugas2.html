@@ -21,7 +21,8 @@
             }
 
             body {
-                background-color: #efefef;
+                background-color: #222;
+                /* background-color: #efefef; */
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -29,7 +30,8 @@
             }
 
             .container {
-                background-color: white;
+                /* background-color: white; */
+                background-color: #333;
                 padding: 2rem;
                 border-radius: 1rem;
                 box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
@@ -41,6 +43,7 @@
             label {
                 font-size: 0.8rem;
                 margin-bottom: 0.2rem;
+                color: white;
             }
 
             input {
@@ -55,9 +58,9 @@
     <body>
         <div class="container">
             <div>
-                <h4 style="margin-bottom: 1.5rem">
+                <h4 style="margin-bottom: 1.5rem; color: white" id="judul">
                     Hidupkan <span style="color: orange">Lampu</span> dengan
-                    Formula <span style="color: red">Rahasia</span> !
+                    Formula <span style="color: orangered">Rahasia</span> !
                 </h4>
             </div>
             <img
@@ -69,16 +72,14 @@
             />
             <div style="width: 80%">
                 <label for="inputUser">Formula</label>
-                <input
-                    type="text"
-                    name="inputUser"
-                    id="inputUser"
-                    maxlength="3"
-                />
+                <input type="text" name="inputUser" id="inputUser" />
             </div>
-            <p style="font-size: 0.8rem; margin-top: 0.4rem">
-                <span style="color: red">[BANTUAN]</span> 3 huruf pertama dalam
-                alfabet
+            <p
+                style="font-size: 0.8rem; margin-top: 0.4rem; color: white"
+                id="help"
+            >
+                <span style="color: orange">[BANTUAN]</span> huruf-huruf pertama
+                dalam alfabet
             </p>
         </div>
 
@@ -86,16 +87,26 @@
             const inputUser = document.getElementById("inputUser");
             const hasilImg = document.getElementById("hasil");
 
-            inputUser.oninput = cekKata;
-
-            function cekKata() {
+            inputUser.oninput = () => {
                 const kata = inputUser.value;
                 if (kata == "abc") {
                     hasilImg.src = "bulbon.png";
+                    document.getElementById("judul").style.color = "black";
+                    document.querySelector("body").style.backgroundColor =
+                        "#efefef";
+                    document.querySelector(".container").style.backgroundColor =
+                        "white";
+                    document.querySelector("#help").style.color = "black";
                 } else {
                     hasilImg.src = "bulboff.png";
+                    document.getElementById("judul").style.color = "white";
+                    document.querySelector("body").style.backgroundColor =
+                        "#222";
+                    document.querySelector(".container").style.backgroundColor =
+                        "#333";
+                    document.querySelector("#help").style.color = "white";
                 }
-            }
+            };
         </script>
     </body>
 </html>
