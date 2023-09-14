@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Figtree", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#judul {
+    padding: 0.8rem 2rem;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    box-shadow: 7px -7px 0 rgb(0, 0, 0);
+    margin: 2rem 0 0;
+    text-transform: uppercase;
+}
+
+#peta {
+    background-color: gray;
+    background-image: url("peta.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 902px;
+    height: 360px;
+    /* scale: 0.7; */
+    margin-top: 4rem;
+    position: relative;
+}
+
+.pin-link {
+    border-radius: 100px;
+    display: block;
+    background-image: url("pin.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.pin-link:hover {
+    background-color: white;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+    scale: 1.2;
+}
+
+#pin1 {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+#pin2 {
+    position: absolute;
+    top: 144px;
+    right: 392px;
+}
+
+#pin3 {
+    position: absolute;
+    bottom: 38px;
+    right: 450px;
+}
