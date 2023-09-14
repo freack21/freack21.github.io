@@ -45,6 +45,7 @@ body {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+    transition: 200ms;
 }
 
 .pin-link:hover {
@@ -75,4 +76,8 @@ body {
     position: absolute;
     bottom: 38px;
     right: 450px;
+}
+
+footer {
+    padding-top: 4rem;
 }
