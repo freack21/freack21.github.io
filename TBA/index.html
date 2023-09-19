@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tugas 2 | TBA</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                outline: none;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            .lingkaranProses {
+                width: 5rem;
+                height: 5rem;
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 100px;
+                position: relative;
+                line-height: 5rem;
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+                color: white;
+            }
+
+            .proses {
+                margin-right: 5rem;
+            }
+
+            .proses::after {
+                content: "";
+                display: block;
+                width: 5rem; /* Atur panjang garis sesuai kebutuhan Anda */
+                height: 1px; /* Atur tinggi garis sesuai kebutuhan Anda */
+                background-color: black; /* Warna garis */
+                position: absolute;
+                top: 50%;
+                right: 0%;
+                transform: translateX(100%); /* Pindahkan garis ke kanan */
+            }
+
+            .proses-else::after {
+                content: "";
+                display: block;
+                width: 7rem; /* Atur panjang garis sesuai kebutuhan Anda */
+                height: 0.5px; /* Atur tinggi garis sesuai kebutuhan Anda */
+                background-color: black; /* Warna garis */
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                transform: translateX(-91%) rotate(30deg); /* Pindahkan garis ke kanan */
+            }
+
+            #input {
+                /* border-radius: 0.7rem; */
+                padding: 0.3rem 1rem;
+                width: 3rem;
+                text-align: center;
+                border: 1px solid #000;
+                font-weight: bold;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            style="
+                padding: 1rem;
+                border: 1px solid black;
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+            "
+        >
+            <div style="display: flex">
+                <div class="lingkaranProses proses" id="proses0"></div>
+                <div class="lingkaranProses proses" id="proses1"></div>
+                <div class="lingkaranProses proses" id="proses2"></div>
+                <div class="lingkaranProses" id="hasil1"></div>
+            </div>
+            <div style="display: flex; flex-direction: row-reverse">
+                <div class="lingkaranProses proses-else" id="hasil2"></div>
+            </div>
+        </div>
+        <div style="margin-top: 1rem">
+            <input type="text" id="input" maxlength="1" />
+        </div>
+        <script>
+            const getBubleProses = (x) => {
+                return document.getElementById("proses" + x);
+            };
+            const getBubleHasil = (x) => {
+                return document.getElementById("hasil" + x);
+            };
+
+            let proses = 0;
+            let seq_simbol = [];
+            const true_seq_simbol = ["a", "b", "c"];
+            const input = document.getElementById("input");
+
+            input.onkeydown = (e) => {
+                const keyCode = e.keyCode;
+                console.log(keyCode);
+                if (keyCode == 13) {
+                    seq_simbol.splice(proses, 1, input.value);
+                    input.value = "";
+                    for (let i = 0; i <= proses; i++) {
+                        if (seq_simbol[i] == true_seq_simbol[i]) {
+                            getBubleProses(i).style.backgroundColor =
+                                "forestgreen";
+                            getBubleProses(i).innerText = seq_simbol[i];
+                            if (i != 2) proses = i + 1;
+                            else {
+                                getBubleHasil(1).style.backgroundColor =
+                                    "forestgreen";
+                                getBubleHasil(1).innerText =
+                                    seq_simbol.join("");
+                                getBubleHasil(2).style.backgroundColor =
+                                    "white";
+                                getBubleHasil(2).innerText = "";
+                            }
+                        } else {
+                            if (!seq_simbol[i]) continue;
+                            getBubleProses(i).style.backgroundColor = "red";
+                            getBubleProses(
+                                i
+                            ).innerText = `'${seq_simbol[i]}' salah!`;
+                            if (i == 2) {
+                                getBubleHasil(2).style.backgroundColor = "red";
+                                getBubleHasil(2).innerText =
+                                    seq_simbol.join("");
+                                getBubleHasil(1).style.backgroundColor =
+                                    "white";
+                            }
+                            getBubleHasil(1).innerText = "";
+                        }
+                    }
+                } else if (keyCode == 8) {
+                    if (proses >= 0) {
+                        if (
+                            (seq_simbol[proses] == true_seq_simbol[proses] &&
+                                proses != 2) ||
+                            (!seq_simbol[proses] &&
+                                seq_simbol[proses - 1] ==
+                                    true_seq_simbol[proses - 1])
+                        ) {
+                            proses--;
+                            if (proses < 0) proses = 0;
+                        }
+                        seq_simbol.splice(proses, 1, "");
+                        getBubleProses(proses).innerText = "";
+                        getBubleProses(proses).style.backgroundColor = "white";
+                    }
+                    if (proses == 2) {
+                        getBubleHasil(2).style.backgroundColor = "white";
+                        getBubleHasil(2).innerText = "";
+                        getBubleHasil(1).style.backgroundColor = "white";
+                        getBubleHasil(1).innerText = "";
+                    }
+                }
+            };
+        </script>
+    </body>
+</html>
