@@ -100,7 +100,7 @@
                 flex-direction: column;
             "
         >
-            <div style="display: flex">
+            <div style="display: flex" id="wadahLingkaran">
                 <div class="lingkaranProses proses" id="proses0"></div>
                 <div class="lingkaranProses proses" id="proses1"></div>
                 <div class="lingkaranProses proses" id="proses2"></div>
@@ -122,8 +122,9 @@
             };
 
             let proses = 0;
+            let maxProses = 3;
             let seq_simbol = [];
-            const true_seq_simbol = ["a", "b", "c"];
+            const true_seq_simbol = "abc";
             const input = document.getElementById("input");
 
             input.onkeydown = (e) => {
@@ -151,7 +152,7 @@
                             getBubleProses(i).style.backgroundColor = "red";
                             getBubleProses(
                                 i
-                            ).innerText = `'${seq_simbol[i]}' salah!`;
+                            ).innerText = `'${seq_simbol[i]}'ditolak`;
                             if (i == 2) {
                                 getBubleHasil(2).style.backgroundColor = "red";
                                 getBubleHasil(2).innerText =

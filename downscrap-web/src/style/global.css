@@ -1,0 +1,80 @@
+/*? global clearing */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #333; /* Warna latar belakang dark */
+    color: white; /* Warna teks putih */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #222; /* Warna latar belakang div */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: #444; /* Warna latar belakang input */
+    color: white;
+    border-radius: 5px;
+}
+
+select {
+    height: 40px;
+}
+
+button {
+    background-color: #007bff; /* Warna tombol */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Warna tombol saat hover */
+}
+.download-link-container {
+    background-color: #444; /* Warna latar belakang div link download */
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.download-link-container a {
+    display: block;
+    background-color: #007bff; /* Warna tombol link download */
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.download-link-container a:hover {
+    background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+.title {
+    margin-bottom: 1rem;
+}
