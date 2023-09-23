@@ -30,20 +30,28 @@ downloadButton.addEventListener("click", () => {
             // Menampilkan hasil response atau link download (disesuaikan dengan respons API)
             if (!data.links) {
                 const downloadLink = document.createElement("a");
-                downloadLink.href = data.link; // Data di sini adalah link download yang diperoleh dari API
-                downloadLink.textContent = "Download File";
+                downloadLink.href =
+                    data.link || data.mp4_2 || data.mp4_hd || data.mp4_1; // Data di sini adalah link download yang diperoleh dari API
+                downloadLink.textContent = "Download Video";
                 downloadLink.target = "_blank"; // Buka tautan dalam tab baru
                 downloadLinkContainer.innerHTML = ""; // Hapus tampilan sebelumnya
                 downloadLinkContainer.appendChild(downloadLink);
             } else {
+                downloadLinkContainer.innerHTML = ""; // Hapus tampilan sebelumnya
                 data.links.forEach((d, i) => {
                     const downloadLink = document.createElement("a");
                     downloadLink.href = d; // Data di sini adalah link download yang diperoleh dari API
                     downloadLink.textContent = `Download File ${i + 1}`;
                     downloadLink.target = "_blank"; // Buka tautan dalam tab baru
-                    downloadLinkContainer.innerHTML = ""; // Hapus tampilan sebelumnya
                     downloadLinkContainer.appendChild(downloadLink);
                 });
+            }
+            if (data.mp3) {
+                const downloadLink = document.createElement("a");
+                downloadLink.href = data.mp3; // Data di sini adalah link download yang diperoleh dari API
+                downloadLink.textContent = "Download Audio";
+                downloadLink.target = "_blank"; // Buka tautan dalam tab baru
+                downloadLinkContainer.appendChild(downloadLink);
             }
             downloadButton.textContent = defText;
             downloadButton.style.backgroundColor = defBg;
