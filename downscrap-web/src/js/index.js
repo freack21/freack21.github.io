@@ -38,13 +38,23 @@ downloadButton.addEventListener("click", () => {
                 downloadLinkContainer.appendChild(downloadLink);
             } else {
                 downloadLinkContainer.innerHTML = ""; // Hapus tampilan sebelumnya
-                data.links.forEach((d, i) => {
-                    const downloadLink = document.createElement("a");
-                    downloadLink.href = d; // Data di sini adalah link download yang diperoleh dari API
-                    downloadLink.textContent = `Download File ${i + 1}`;
-                    downloadLink.target = "_blank"; // Buka tautan dalam tab baru
-                    downloadLinkContainer.appendChild(downloadLink);
-                });
+                if (selectOption == "fb") {
+                    data.links.forEach((d, i) => {
+                        const downloadLink = document.createElement("a");
+                        downloadLink.href = d.link; // Data di sini adalah link download yang diperoleh dari API
+                        downloadLink.textContent = `Download File (${d.quality})`;
+                        downloadLink.target = "_blank"; // Buka tautan dalam tab baru
+                        downloadLinkContainer.appendChild(downloadLink);
+                    });
+                } else {
+                    data.links.forEach((d, i) => {
+                        const downloadLink = document.createElement("a");
+                        downloadLink.href = d; // Data di sini adalah link download yang diperoleh dari API
+                        downloadLink.textContent = `Download File ${i + 1}`;
+                        downloadLink.target = "_blank"; // Buka tautan dalam tab baru
+                        downloadLinkContainer.appendChild(downloadLink);
+                    });
+                }
             }
             if (data.mp3) {
                 const downloadLink = document.createElement("a");
