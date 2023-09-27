@@ -38,7 +38,7 @@ downloadButton.addEventListener("click", () => {
                 downloadLinkContainer.appendChild(downloadLink);
             } else {
                 downloadLinkContainer.innerHTML = ""; // Hapus tampilan sebelumnya
-                if (selectOption == "fb") {
+                if (selectedOption == "fb") {
                     data.links.forEach((d, i) => {
                         const downloadLink = document.createElement("a");
                         downloadLink.href = d.link; // Data di sini adalah link download yang diperoleh dari API
