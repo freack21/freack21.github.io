@@ -242,44 +242,44 @@
                     if (!input.value) return;
                     seq_simbol.splice(proses, 1, input.value);
                     input.value = "";
-                    const str_seq = seq_simbol.join(" ");
-                    const str_true = true_seq_simbol.join(" ");
-                    const str_true2 = true_seq_simbol2.join(" ");
-                    if (
-                        str_seq == str_true.substr(0, str_seq.length) ||
-                        str_seq == str_true2.substr(0, str_seq.length)
-                    ) {
-                        getBubleProses(proses).style.backgroundColor =
-                            "limegreen";
-                        getBubleProses(proses).innerText = seq_simbol[proses];
-                        document.querySelector("p#comment").innerHTML =
-                            "INPUT DITERIMA!";
-                        document.querySelector("p#comment").style.color =
-                            "green";
-                        if (proses != maxProses - 1) proses = proses + 1;
-                        else {
-                            getBubleHasil(1).style.backgroundColor =
-                                "limegreen";
-                            getBubleHasil(1).innerText = seq_simbol.join(" ");
-                            getBubleHasil(2).style.backgroundColor = "white";
-                            getBubleHasil(2).innerText = "";
-                        }
-                    } else {
-                        if (!seq_simbol[proses]) return;
-                        getBubleProses(proses).style.backgroundColor = "red";
-                        getBubleProses(
-                            proses
-                        ).innerText = `'${seq_simbol[proses]}' ditolak!`;
-                        document.querySelector("p#comment").innerHTML =
-                            "INPUT DITOLAK!";
-                        document.querySelector("p#comment").style.color = "red";
-                        if (proses == maxProses - 1) {
-                            getBubleHasil(2).style.backgroundColor = "red";
-                            getBubleHasil(2).innerText = seq_simbol.join(" ");
-                            getBubleHasil(1).style.backgroundColor = "white";
-                        }
-                        getBubleHasil(1).innerText = "";
-                    }
+                    // const str_seq = seq_simbol.join(" ");
+                    // const str_true = true_seq_simbol.join(" ");
+                    // const str_true2 = true_seq_simbol2.join(" ");
+                    // if (
+                    //     str_seq == str_true.substr(0, str_seq.length) ||
+                    //     str_seq == str_true2.substr(0, str_seq.length)
+                    // ) {
+                    //     getBubleProses(proses).style.backgroundColor =
+                    //         "limegreen";
+                    //     getBubleProses(proses).innerText = seq_simbol[proses];
+                    //     document.querySelector("p#comment").innerHTML =
+                    //         "INPUT DITERIMA!";
+                    //     document.querySelector("p#comment").style.color =
+                    //         "green";
+                    //     if (proses != maxProses - 1) proses = proses + 1;
+                    //     else {
+                    //         getBubleHasil(1).style.backgroundColor =
+                    //             "limegreen";
+                    //         getBubleHasil(1).innerText = seq_simbol.join(" ");
+                    //         getBubleHasil(2).style.backgroundColor = "white";
+                    //         getBubleHasil(2).innerText = "";
+                    //     }
+                    // } else {
+                    //     if (!seq_simbol[proses]) return;
+                    //     getBubleProses(proses).style.backgroundColor = "red";
+                    //     getBubleProses(
+                    //         proses
+                    //     ).innerText = `'${seq_simbol[proses]}' ditolak!`;
+                    //     document.querySelector("p#comment").innerHTML =
+                    //         "INPUT DITOLAK!";
+                    //     document.querySelector("p#comment").style.color = "red";
+                    //     if (proses == maxProses - 1) {
+                    //         getBubleHasil(2).style.backgroundColor = "red";
+                    //         getBubleHasil(2).innerText = seq_simbol.join(" ");
+                    //         getBubleHasil(1).style.backgroundColor = "white";
+                    //     }
+                    //     getBubleHasil(1).innerText = "";
+                    // }
                     // for (let i = 0; i <= proses; i++) {
                     //     if (seq_simbol[i] == true_seq_simbol[i]) {
                     // getBubleProses(i).style.backgroundColor = "limegreen";
