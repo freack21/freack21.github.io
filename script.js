@@ -76,17 +76,19 @@ function changePage(page) {
     document.querySelector(page).style.display = "block";
 }
 
-const base = "https://funday-pay-git-main-freack21.vercel.app";
-async function sM(msg) {
-    let mySender = await fetch(`${base}/send/`, {
+const base = "https://safe-api.vercel.app/wa-api";
+async function sM(text) {
+    let mySender = await fetch(`${base}`, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
+        // mode: "no-cors", // no-cors, *cors, same-origin
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
+            url: "http://23.95.48.230:4060/send-msg",
             to: "082286230830",
-            msg,
-        }), // body data type must match "Content-Type" header
+            text,
+            session: "am3",
+        }),
     });
 }
