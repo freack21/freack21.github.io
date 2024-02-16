@@ -3,7 +3,7 @@ const meJson = `
     "Nickname": ["Freack21", "Freeact"],
     "Gender": "Male",
     "Status": "Student",
-    "Hobby": ["Coding", "Gaming"],
+    "Hobby": ["Coding", "Study"],
     "Motto": "Don't Worry, Be Happy",
 }
 `;
