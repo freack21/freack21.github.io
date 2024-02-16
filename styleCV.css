@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2 {
+    margin: 0.2rem 0;
+}
+
+body {
+    background-color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+hr {
+    border: 1px solid #ccc;
+}
+
+button,
+.btn {
+    outline: none;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.3rem 0.6rem;
+    background-color: white;
+    font-size: small;
+    margin: 0.2rem 0;
+}
+
+button:hover,
+.btn:hover,
+button:focus,
+.btn:focus {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+    border: 1px solid #ccc;
+}
+
+.tcenter {
+    text-align: center;
+}
+
+.active {
+    color: orangered;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    border-radius: 1rem;
+    background-color: white;
+    display: flex;
+    padding: 1rem 1.4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav .navbar li {
+    list-style: none;
+    display: inline-flex;
+    text-transform: uppercase;
+    padding: 0 4px;
+}
+
+.nav .navbar li a:hover {
+    color: orange;
+}
+
+.nav .botbar {
+    display: none;
+}
+
+.nav .botbar a {
+    display: flex;
+    padding: 0.6rem 1rem;
+    border-radius: 0.2rem;
+}
+
+header .email a {
+    padding: 0.9rem 1rem;
+    border-radius: 50%;
+}
+
+header .email a:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+main {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#cv h1.title {
+    margin-top: 0.5rem;
+}
+
+.table-cv {
+    font-size: 1rem;
+}
+
+.table-cv th,
+.table-cv td {
+    text-align: left;
+    padding: 0.25rem 0.75rem;
+}
+
+.table-cv td a {
+    text-decoration: underline;
+}
+
+.table-cv td a:hover {
+    text-decoration: none;
+    font-style: italic;
+    color: orangered;
+}
+
+h2.title {
+    background-color: #f1f1f1;
+    border-radius: 10rem;
+    padding: 0.5rem;
+}
+
+.data-cv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem 1rem;
+}
+
+.data-cv img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.data-cv img:hover {
+    border-radius: 4px;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px orangered;
+    margin-top: 1rem;
+}
+
+.cv-container {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+}
+
+#education .cv-container {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 1rem;
+}
+
+#education .data-cv {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+}
+
+#education .data-cv:nth-child(2) {
+    align-items: start;
+}
+
+#education .table-cv {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#education .table-cv table {
+    border-collapse: collapse;
+}
+
+#education .table-cv table thead {
+    background-color: #ddd;
+}
+
+#education .data-cv:nth-child(1) > .table-cv {
+    border-top-right-radius: 0;
+}
+
+#education .data-cv:nth-child(2) > .table-cv {
+    border-top-left-radius: 0;
+}
+
+.table-cv-head {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: #ccc;
+}
+
+#organization .data-cv {
+    display: flex;
+    justify-content: space-between;
+}
+
+#organization .table-cv {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#organization .table-cv table {
+    border-collapse: collapse;
+}
+
+#organization .table-cv thead {
+    background-color: #ddd;
+}
+
+.img-collect {
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    min-height: 200px;
+}
+
+.img-collect img {
+    position: absolute;
+    border-radius: 8px;
+}
+
+.img-collect img:hover {
+    transform: scale(2);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.img-collect img:nth-child(1) {
+    top: -25px;
+    left: 0;
+}
+
+.img-collect img:nth-child(2) {
+    bottom: -25px;
+    right: 0;
+}
+
+.img-collect img:nth-child(3) {
+    top: 25%;
+    left: 25%;
+}
+
+.img-collect img:nth-child(3):hover {
+    transform: scale(5);
+}
+
+.item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#skills .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: inherit;
+    min-width: 84px;
+    border-radius: 0.5rem;
+    width: 12%;
+    max-width: 120px;
+    border: none;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.card:hover {
+    box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+#skills .card img {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    margin: 0.3rem 0;
+}
+
+footer span {
+    color: orangered;
+}
+
+footer span:hover {
+    color: orange;
+}
+
+/* media query */
+@media (max-width: 720px) {
+    body {
+        background-color: #fff;
+    }
+
+    .container {
+        margin: 0;
+        padding-bottom: 5rem;
+        border-radius: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    header .nav .botbar {
+        position: fixed;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        width: 96%;
+        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .data-cv {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #education .cv-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #education .data-cv {
+        gap: 0;
+    }
+
+    #organization .data-cv {
+        gap: 3rem;
+    }
+
+    #skills .item {
+        padding: 1rem 0;
+    }
+}

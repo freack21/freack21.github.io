@@ -12,7 +12,7 @@ document.querySelector(".json-me code").innerText = meJson;
 let nav = document.querySelectorAll(".nav-link");
 nav.forEach((n) => {
     n.onclick = (e) => {
-        e.preventDefault();
+        if (!e.target.href.includes("html")) e.preventDefault();
         nav.forEach((l) => {
             l.classList.remove("active");
         });
