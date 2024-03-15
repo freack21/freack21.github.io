@@ -3,25 +3,41 @@
     box-sizing: border-box;
     font-family: "Rubik", sans-serif;
 }
-
 h1,
 h2 {
     margin: 0.2rem 0;
 }
-
 body {
     background-color: #ddd;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
-hr {
-    border: 1px solid #ccc;
+label {
+    display: block;
+    font-size: 1rem;
+    padding: 0.2rem 0;
 }
 
+input {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.2rem;
+    outline: none;
+    border: 1px solid #999;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 0.2rem;
+    overflow: hidden;
+    resize: none;
+}
 button,
 .btn {
     outline: none;
@@ -32,7 +48,6 @@ button,
     font-size: small;
     margin: 0.2rem 0;
 }
-
 button:hover,
 .btn:hover,
 button:focus,
@@ -40,19 +55,15 @@ button:focus,
     cursor: pointer;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
 }
-
 hr {
     border: 1px solid #ccc;
 }
-
 .tcenter {
     text-align: center;
 }
-
 .active {
     color: orangered;
 }
-
 .container {
     width: 90%;
     max-width: 800px;
@@ -62,7 +73,6 @@ hr {
     background-color: white;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
 }
-
 header {
     border-radius: 1rem;
     background-color: white;
@@ -71,79 +81,64 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-
 .nav {
     display: flex;
     align-items: center;
 }
-
 .nav .navbar li {
     list-style: none;
     display: inline-flex;
     text-transform: uppercase;
     padding: 0 4px;
 }
-
 .nav .navbar li a:hover {
     color: orange;
 }
-
 .nav .botbar {
     display: none;
 }
-
 .nav .botbar a {
     display: flex;
     padding: 0.6rem 1rem;
     border-radius: 0.2rem;
 }
-
 header .email a {
     padding: 0.9rem 1rem;
     border-radius: 50%;
 }
-
 header .email a:hover {
     background-color: orange;
     cursor: pointer;
 }
-
 main {
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
 }
-
 #cv h1.title {
     margin-top: 0.5rem;
 }
-
 .table-cv {
     font-size: 1rem;
 }
-
 .table-cv th,
 .table-cv td {
     text-align: left;
     padding: 0.25rem 0.75rem;
 }
-
 .table-cv td a {
     text-decoration: underline;
 }
-
 .table-cv td a:hover {
     text-decoration: none;
     font-style: italic;
     color: orangered;
 }
-
 h2.title {
     background-color: #f1f1f1;
     border-radius: 10rem;
     padding: 0.5rem;
 }
-
 .data-cv {
     display: flex;
     flex-direction: row;
@@ -151,7 +146,6 @@ h2.title {
     align-items: start;
     padding: 2rem 1rem;
 }
-
 .data-cv img {
     width: 100%;
     max-width: 150px;
@@ -159,19 +153,16 @@ h2.title {
     transition: 0.5s;
     cursor: pointer;
 }
-
 .data-cv img:hover {
     border-radius: 4px;
     transform: scale(1.15);
     box-shadow: 8px -8px 8px rgba(0, 0, 0, 0.25);
     margin-top: 1rem;
 }
-
 .cv-container {
     margin-top: 1rem;
     padding: 1rem 2rem;
 }
-
 #education .cv-container {
     margin-top: 0;
     display: flex;
@@ -179,40 +170,32 @@ h2.title {
     flex-direction: row;
     padding: 0 1rem;
 }
-
 #education .data-cv {
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: start;
 }
-
 #education .data-cv:nth-child(2) {
     align-items: start;
 }
-
 #education .table-cv {
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     overflow: hidden;
 }
-
 #education .table-cv table {
     border-collapse: collapse;
 }
-
 #education .table-cv table thead {
     background-color: #ddd;
 }
-
 #education .data-cv:nth-child(1) > .table-cv {
     border-top-right-radius: 0;
 }
-
 #education .data-cv:nth-child(2) > .table-cv {
     border-top-left-radius: 0;
 }
-
 .table-cv-head {
     border: 1px solid #ccc;
     border-bottom: 0;
@@ -220,63 +203,51 @@ h2.title {
     border-radius: 0.5rem 0.5rem 0 0;
     background-color: #ccc;
 }
-
 #organization .data-cv {
     display: flex;
     justify-content: space-between;
 }
-
 #organization .table-cv {
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     overflow: hidden;
 }
-
 #organization .table-cv table {
     border-collapse: collapse;
 }
-
 #organization .table-cv thead {
     background-color: #ddd;
 }
-
 .img-collect {
     width: 100%;
     max-width: 320px;
     position: relative;
     min-height: 200px;
 }
-
 .img-collect img {
     position: absolute;
     border-radius: 8px;
 }
-
 .img-collect img:hover {
     transform: scale(2);
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
 .img-collect img:nth-child(1) {
     top: -25px;
     left: 0;
 }
-
 .img-collect img:nth-child(2) {
     bottom: -25px;
     right: 0;
 }
-
 .img-collect img:nth-child(3) {
     top: 25%;
     left: 25%;
 }
-
 .img-collect img:nth-child(3):hover {
     transform: scale(5);
 }
-
 .item {
     padding: 1rem;
     display: flex;
@@ -286,7 +257,6 @@ h2.title {
     flex-wrap: wrap;
     gap: 1rem;
 }
-
 #skills .card {
     display: flex;
     flex-direction: column;
@@ -301,34 +271,27 @@ h2.title {
     margin: 1rem 0.5rem;
     padding: 0.5rem 1rem;
 }
-
 .card:hover {
     box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.3);
 }
-
 #skills .card img {
     width: 100%;
     margin-bottom: 0.5rem;
 }
-
 footer {
     margin: 0.3rem 0;
 }
-
 footer span {
     color: orangered;
 }
-
 footer span:hover {
     color: orange;
 }
-
 /* media query */
 @media (max-width: 720px) {
     body {
         background-color: #fff;
     }
-
     .container {
         margin: 0;
         padding-bottom: 5rem;
@@ -336,11 +299,9 @@ footer span:hover {
         width: 100%;
         box-shadow: none;
     }
-
     .navbar {
         display: none;
     }
-
     header .nav .botbar {
         position: fixed;
         display: flex;
@@ -357,7 +318,6 @@ footer span:hover {
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
     }
 }
-
 @media (max-width: 768px) {
     .data-cv {
         display: flex;
@@ -365,21 +325,109 @@ footer span:hover {
         align-items: center;
         gap: 1rem;
     }
-
     #education .cv-container {
         flex-direction: column;
         align-items: center;
     }
-
     #education .data-cv {
         gap: 0;
     }
-
     #organization .data-cv {
         gap: 3rem;
     }
-
     #skills .item {
         padding: 1rem 0;
     }
 }
+
+/* contact */
+#contact .p-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    /* background-color: #f5f5f5; */
+}
+
+.contact-me {
+    margin: 0.5rem 0;
+    width: 80%;
+}
+
+#notif {
+    width: 100%;
+    text-align: center;
+    display: none;
+    /* background-color: rgba(255, 0, 0, 0.7); */
+    /* background-color: rgba(0, 128, 0, 0.8); */
+    /* box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3); */
+    /* border-radius: 1rem; */
+    font-size: 0.9rem;
+    margin: 0.6rem 0;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5rem;
+}
+
+.contact-me input {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin: 1rem 0;
+}
+
+.contact-me input:focus,
+.contact-me textarea:focus,
+.contact-me input:hover,
+.contact-me textarea:hover {
+    transition: 0.5s;
+    border-bottom: 1px solid #333;
+}
+
+.contact-me textarea {
+    background-color: inherit;
+    border: 1px solid #aaa;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin: 1rem 0;
+}
+
+.contact-me .btn {
+    width: 100%;
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 1rem;
+    background-color: orangered;
+    color: white;
+}
+
+.my-contact {
+    margin: 1.5rem 0;
+    margin-bottom: 0.5rem;
+    width: 80%;
+}
+
+.my-contact div.item {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+}
+
+.my-contact .card {
+    margin: 0.5rem;
+    padding: 0;
+    font-size: 2rem;
+    border: none;
+    transition: 0.3s;
+    outline: none;
+}
+
+.my-contact .card:hover,
+.my-contact .card:focus {
+    box-shadow: none;
+    color: orangered;
+    margin-top: -0.1rem;
+}
+/* contact */
