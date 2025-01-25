@@ -15,7 +15,7 @@ iframe {
   min-height: 180px;
 }
 body {
-  background-color: #ddd;
+  background-color: #fff;
 }
 a {
   text-decoration: none;
@@ -137,7 +137,7 @@ code {
 .container {
   padding-bottom: 1rem;
   background-color: white;
-  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3); */
 }
 /* header */
 header {
@@ -167,8 +167,8 @@ header {
 }
 .nav .botbar a {
   display: flex;
-  padding: 0.6rem 1rem;
-  border-radius: 0.2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.1rem;
 }
 /* .nav .botbar a:hover {
  background-color: #ddd;
@@ -348,7 +348,7 @@ main {
   background-color: inherit;
   border: none;
   border-bottom: 1px solid #aaa;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 .contact-me input:focus,
 .contact-me textarea:focus,
@@ -363,13 +363,17 @@ main {
   font-size: 0.9rem;
   border: none;
   border-bottom: 1px solid #aaa;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 .contact-me .btn {
-  width: 100%;
-  padding: 0.4rem 1rem;
+  width: fit-content;
+  float: right;
+  padding: 0.5rem 1rem;
   font-size: 0.95rem;
-  border-radius: 1rem;
+  border-radius: 99999px;
+}
+.contact-me .contact-form {
+  padding: 0 10%;
 }
 .my-contact {
   margin: 1.5rem 0;
@@ -378,8 +382,9 @@ main {
 }
 .my-contact div.item {
   display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 .my-contact .card {
   margin: 0.5rem;
@@ -535,7 +540,7 @@ h2.title {
 
 /* footer */
 footer {
-  margin: 0.3rem 0;
+  margin: 1rem 0;
 }
 footer span {
   color: orangered;
@@ -566,15 +571,15 @@ footer span:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     background-color: white;
-    width: 96%;
-    margin-left: 0.5rem;
-    margin-bottom: 0.5rem;
+    width: 90%;
+    margin-bottom: 1rem;
     padding: 0.5rem;
-    border-radius: 0.8rem;
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
   }
   #home .intro {
     flex-direction: column-reverse;
@@ -616,6 +621,7 @@ footer span:hover {
   .my-contact div.item {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -642,6 +648,9 @@ footer span:hover {
   }
 }
 @media (min-width: 768px) {
+  .intro {
+    gap: 2rem;
+  }
   #skill .card {
     width: 13%;
     margin: 0.4rem 1rem;

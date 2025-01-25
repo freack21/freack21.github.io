@@ -1,9 +1,8 @@
 const meJson = `
   "Fikri Rivandi": {
-      "Nickname": ["freack21", "Fundayyy"],
-      "Gender": "Male",
-      "Status": "Student",
-      "Motto": "happily",
+    "nickname": ["freack21", "Fundayyy"],
+    "gender": "Male",
+    "status": "Student",
   }`;
 document.querySelector(".json-me code").innerText = meJson;
 
@@ -33,21 +32,24 @@ form.addEventListener("submit", (e) => {
     text += `\n*${data[0]}:*\n    ${data[1]}\n`;
   }
   text = text.trim();
-  sendBtn.innerText = "Sending...";
+  sendBtn.innerHTML = `<i class="fa-solid fa-spinner"></i> Sending...`;
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then(async (response) => {
-      Notify("rgba(0, 128, 0, 0.8)", "Sent successfully!!");
+      Notify("rgba(0, 128, 0, 0.8)", "Sent successfully", true);
     })
     .catch((error) => {
-      Notify("rgba(255, 0, 0, 0.8)", "Failed to send message!!");
+      Notify("rgba(255, 0, 0, 0.8)", "Failed to send message", false);
     });
 });
 
-function Notify(color, msg) {
+function Notify(color, msg, isSuccess) {
   form.reset();
   sendBtn.disabled = true;
   sendBtn.style.backgroundColor = color;
-  sendBtn.innerText = msg;
+  if (isSuccess)
+    sendBtn.innerHTML = `<i class="fa-regular fa-thumbs-up"></i> ${msg}`;
+  else
+    sendBtn.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
   setTimeout(() => {
     sendBtn.disabled = false;
     sendBtn.innerHTML = defSendBtnText;
