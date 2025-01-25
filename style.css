@@ -151,12 +151,14 @@ header {
 .nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .nav .navbar li {
   list-style: none;
   display: inline-flex;
   text-transform: uppercase;
-  padding: 0 4px;
+  padding: 0 1rem;
   font-weight: 500;
 }
 .nav .navbar li a:hover {
@@ -196,13 +198,18 @@ main {
   /* background-color: #f5f5f5; */
   /* border-radius: 2rem; */
   align-items: center;
-  padding: 3rem 5%;
+  padding: 3rem 10%;
   margin: 0 5%;
   margin-bottom: 1rem;
+  min-height: 60vh;
 }
 .intro h1 {
   color: orangered;
   margin-bottom: 0.5rem;
+  font-size: 3em;
+}
+.intro h2 {
+  font-size: 1.75em;
 }
 .intro h2,
 .intro p {
@@ -229,7 +236,6 @@ main {
 
 /* project */
 #project .p-container {
-  /* background-color: red; */
   padding-bottom: 2.5rem;
   margin-bottom: 5rem;
   display: flex;
@@ -238,12 +244,21 @@ main {
 }
 #project .item {
   margin-top: 0.5rem;
-  width: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
 }
 #project .card {
-  min-width: 340px;
-  width: 30%;
+  min-width: 320px;
+  width: 25%;
   padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 /* project */
 
@@ -258,11 +273,11 @@ main {
 }
 #skill .item {
   margin: 1rem 0;
-  width: 75%;
+  width: 70%;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.5rem;
   justify-content: center;
 }
 .hs0:hover {
@@ -329,6 +344,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 2.5rem; /* background-color: #f5f5f5; */
+  padding: 0 10%;
 }
 .contact-me {
   margin: 0.5rem 0;
@@ -373,7 +389,7 @@ main {
   border-radius: 99999px;
 }
 .contact-me .contact-form {
-  padding: 0 10%;
+  padding: 0 25%;
 }
 .my-contact {
   margin: 1.5rem 0;
@@ -605,6 +621,12 @@ footer span:hover {
   #skill .item {
     width: 90%;
   }
+  #contact .p-container {
+    padding: 0;
+  }
+  .contact-me .contact-form {
+    padding: 0 10%;
+  }
 }
 @media (max-width: 400px) {
   .intro img {
@@ -650,6 +672,9 @@ footer span:hover {
 @media (min-width: 768px) {
   .intro {
     gap: 2rem;
+  }
+  .intro p {
+    font-size: 0.95em;
   }
   #skill .card {
     width: 13%;
