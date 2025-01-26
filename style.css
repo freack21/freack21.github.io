@@ -175,10 +175,6 @@ header {
   padding: 0.75rem 1rem;
   border-radius: 0.1rem;
 }
-/* .nav .botbar a:hover {
- background-color: #ddd;
-} */
-
 header .email a {
   padding: 0.9rem 1rem;
   border-radius: 50%;
@@ -194,15 +190,18 @@ main {
   display: flex;
   flex-direction: column;
 }
+.page {
+  padding: 4rem 0;
+}
 
 /* home */
 #home .intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 10%;
-  margin: 1rem 5%;
-  min-height: 75vh;
+  margin: 0 5%;
+  min-height: 60vh;
+  padding: 0 10%;
 }
 .intro h1 {
   color: orangered;
@@ -237,7 +236,6 @@ main {
 
 /* project */
 #project .p-container {
-  padding-bottom: 2.5rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -260,6 +258,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+  cursor: help;
 }
 /* project */
 
@@ -269,7 +268,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2rem;
   margin-bottom: 5rem;
 }
 #skill .item {
@@ -308,7 +306,6 @@ main {
   flex-flow: column wrap;
   align-items: center;
   align-content: center;
-  padding-bottom: 2rem;
   margin-bottom: 4rem;
 }
 .json-me {
@@ -344,8 +341,6 @@ main {
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 2.5rem;
-  padding: 0 10%;
 }
 .contact-me {
   margin: 0.5rem 0;
@@ -605,6 +600,9 @@ footer span:hover {
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
     z-index: 999;
+  }
+  .page {
+    padding: 1.5rem 0;
   }
   #home .intro {
     flex-direction: column-reverse;
