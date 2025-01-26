@@ -6,19 +6,6 @@ const meJson = `
   }`;
 document.querySelector(".json-me code").innerText = meJson;
 
-let nav = document.querySelectorAll(".nav-link");
-nav.forEach((n) => {
-  n.onclick = (e) => {
-    if (e.target.href.includes("html")) return;
-    e.preventDefault();
-    nav.forEach((l) => {
-      l.classList.remove("active");
-    });
-    changePage(n.getAttribute("href"));
-    n.classList.add("active");
-  };
-});
-
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbz0_l8FXu380-NJ1rjYUvS3bXvcZydePWRNhyR_8qzNQhTGCdg6et-6EFcA8RuLCj-49A/exec";
 const form = document.forms["contact-form"];
@@ -71,3 +58,58 @@ function changePage(page) {
   pages.forEach((l) => (l.style.display = "none"));
   document.querySelector(page).style.display = "block";
 }
+
+function setNavLink() {
+  let nav = document.querySelectorAll(".nav-link");
+  nav.forEach((n) => {
+    n.onclick = (e) => {
+      if (e.target.href.includes("html")) return;
+      e.preventDefault();
+      nav.forEach((l) => {
+        l.classList.remove("active");
+      });
+      changePage(n.getAttribute("href"));
+      n.classList.add("active");
+    };
+  });
+}
+
+function jumpToPage() {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll(".page");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+
+      const targetId = link.getAttribute("href").slice(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 50;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").slice(1) === current) {
+        link.classList.add("active");
+      }
+    });
+  });
+}
+
+jumpToPage();
